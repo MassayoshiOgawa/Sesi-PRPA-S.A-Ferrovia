@@ -2,6 +2,8 @@ function print(msg) {
     console.log(msg);
 }
 
+
+/* Dois vetores que armazenam os usuarios e as senhas de forma respectiva */
 const usuarios = ["Leandro Massayoshi Ogawa", "Pedro Henrique Monteiro Oliveira"]
 const senhas = ["abacaxi123", "javascript123"]
 
