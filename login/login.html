@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/script.js" defer></script>
     <link rel="stylesheet" href="../style/style.css">
     <title>Login</title>
 </head>
@@ -35,11 +35,10 @@
                     <label for="cadastro">Nº Cadastro:</label><br>
                 <input type="number" id="cadastro" name="cadastro" required>
                 <hr>
-                </div>
-                
-                <br>
-                <button type="button" onclick="enviarform()" id="loginbuton">Enviar</button>
-            </form>
+            </div>
+            <br>
+            <button type="button" onclick="enviarform()" id="loginbuton">Enviar</button>
+        </form>
         </div>
 
     </main>
