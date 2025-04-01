@@ -14,39 +14,28 @@
 
     </header>
     <main>
-       <div class="cab"></div>
+        <div class="cab"></div>
         <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <div class="inpput">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required>
+                <hr>
+            </div>
             <br>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
+            <div class="inpput">
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha" required>
+                <hr>
+            </div>
             <br>
-            <label for="cadastro">Nº Cadastro:</label>
-        <div id="form">
-            <form>
-                <div class="inpput">
-                    <label for="nome">Nome:</label><br>
-                    <input type="text" id="nome" name="nome" required>
-                    <hr>
-                </div>
-
-                <br>
-                <div class="inpput">
-                    <label for="senha">Senha:</label><br>
-                    <input type="password" id="senha" name="senha" required>
-                    <hr>
-                </div>
-                <br>
-                <div class="inpput">
-                    <label for="cadastro">Nº Cadastro:</label><br>
+            <div class="inpput">
+                <label for="cadastro">Nº Cadastro:</label><br>
                 <input type="number" id="cadastro" name="cadastro" required>
                 <hr>
-                </div>
-                
-                <br>
-                <button type="button" onclick="enviarform()" id="loginbuton">Enviar</button>
-            </form>
+            </div>
+            <br>
+            <button type="button" onclick="enviarform()" id="loginbuton">Enviar</button>
+        </form>
         </div>
 
     </main>
