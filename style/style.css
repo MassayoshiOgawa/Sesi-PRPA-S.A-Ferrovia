@@ -6,11 +6,36 @@ body{
     overflow: hidden;
 }
 #form{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #nome{
-   
+   background-color: black;
+   color: white;
+   border-color: black;
 }
-.nome{
-    background-color: aqua;
+#senha{
+    background-color: black;
+    color: white;
+    border-color: black;
+ }
+ #cadastro{
+    background-color: black;
+    color: white;
+    border-color: black;
+ }
+.inpput{
+    background-color: black;
+    color: white;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-style: solid;
+    border-radius: 20px; 
+    border-color: black;
+}
+#loginbuton{
+    background-color: #f2a42d;
+    width: 40%;
+    height: 25%;
 }
