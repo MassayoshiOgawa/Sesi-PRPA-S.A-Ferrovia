@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link rel="stylesheet" href="../style/style.css">
     <title>Login</title>
 </head>
+
 <body>
     <header>
 
     </header>
     <main>
+       <div class="cab"></div>
         <form>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
@@ -20,13 +23,36 @@
             <input type="password" id="senha" name="senha" required>
             <br>
             <label for="cadastro">Nº Cadastro:</label>
-            <input type="number" id="cadastro" name="cadastro" required>
-            <br>
-            <button type="button" onclick="enviarform()">Enviar</button>
-        </form>
+        <div id="form">
+            <form>
+                <div class="inpput">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" required>
+                    <hr>
+                </div>
+
+                <br>
+                <div class="inpput">
+                    <label for="senha">Senha:</label><br>
+                    <input type="password" id="senha" name="senha" required>
+                    <hr>
+                </div>
+                <br>
+                <div class="inpput">
+                    <label for="cadastro">Nº Cadastro:</label><br>
+                <input type="number" id="cadastro" name="cadastro" required>
+                <hr>
+                </div>
+                
+                <br>
+                <button type="button" onclick="enviarform()" id="loginbuton">Enviar</button>
+            </form>
+        </div>
+
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>
