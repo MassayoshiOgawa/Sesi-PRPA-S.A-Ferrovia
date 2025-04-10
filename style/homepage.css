@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff1dc;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+header {
+    background-color: #F58430;
+    width: 100%;
+    height: 70px;
+}
+
+.flex{
+    display: flex;
+}
+
+header > div{
+height: 100%;
+}
+
+.width{
+    width: 100%;
+}
+
+.headerMiddleBox{
+    width: 50%;
+}
+
+.headerSideBox{
+    width: 25%;
+}

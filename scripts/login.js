@@ -22,6 +22,6 @@ function enviarform() {
         return;
     } else {
         alert("Login efetuado com sucesso!")
-        window.location.replace("../index.html")
+        window.location.replace("../homepage.html")
     }
 }
