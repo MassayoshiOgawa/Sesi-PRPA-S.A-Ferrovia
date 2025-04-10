@@ -9,9 +9,10 @@ const senhas = ["abacaxi123", "javascript123"]
 
 
 function enviarform() {
-    const nome = document.getElementById("nome").value.trim();
-    const senha = document.getElementById("senha").value.trim();
-    const cadastro = parseInt(document.getElementById("cadastro").value)
+    const frm = document.getElementById("loginForm")
+    const nome = frm.inNome.value.trim();
+    const senha = frm.inSenha.value.trim();
+    const cadastro = parseInt(frm.inCadastro.value)
 
     if (nome !== usuarios[cadastro]) {
         alert("Usuário não encontrado.");
