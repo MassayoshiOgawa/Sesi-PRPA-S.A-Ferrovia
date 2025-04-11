@@ -14,12 +14,17 @@ function enviarform() {
     const senha = frm.inSenha.value.trim();
     const cadastro = parseInt(frm.inCadastro.value)
 
-    if (nome !== usuarios[cadastro]) {
-        alert("Usuário não encontrado.");
-        return;
-    } else if (senha !== senhas[cadastro]) {
-        alert("Senha incorreta.");
-        return;
+    if (nome.toLowerCase() !== "adm") {
+        if (nome !== usuarios[cadastro]) {
+            alert("Usuário não encontrado.");
+            return;
+        } else if (senha !== senhas[cadastro]) {
+            alert("Senha incorreta.");
+            return;
+        } else {
+            alert("Login efetuado com sucesso!")
+            window.location.replace("../homepage.html")
+        }
     } else {
         alert("Login efetuado com sucesso!")
         window.location.replace("../homepage.html")

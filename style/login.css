@@ -63,7 +63,7 @@ body{
 }
 
 footer > p{
-    margin: 0; padding: 0; font-size: 11px; text-align: center; margin-top: 250px; color: rgb(79, 79, 79);
+    margin: 0; padding: 0; font-size: 11px; text-align: center; margin-top: 200px; color: rgba(79, 79, 79, 0.649);
 }
 
 .inputTag{
