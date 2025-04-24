@@ -4,45 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/homepage.css">
-    <script src="scripts/../scripts/homepage/homepage.js" defer></script>
-    <script src="scripts/../scripts/homepage/atualizaHorario.js" defer></script>
-    <script src="scripts/homepage/barraLateral.js" defer></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../scripts/homepage/atualizaHorario.js" defer></script>
+    <script src="../scripts/homepage/barraLateral.js" defer></script>
+    <script src="../scripts/homepage/homepage.js" defer></script>
     <title>Ferrovia</title>
 </head>
 
 <body>
     <header>
         <div class="flex width">
-            <div class="headerSideBox"><img src="imgs/tresbarra.png" alt="" class="headerImage" id="tresBarraInicial" onclick="barFunction()"></div>
+            <div class="headerSideBox"><img src="../assets/tresbarra.png" alt="" class="headerImage" id="tresBarraInicial" onclick="barFunction()"></div>
             <div class="headerMiddleBox"><p>Linhas Específicas</p></div>
             <div class="headerSideBox"><p id="horarioJS" style="font-weight: bold;"></p></div>
         </div>
     </header>
     <main>
-        <button><a href="login/login.html">Voltar Para login</a></button>
+        <button><a href="../public/login.html">Voltar Para login</a></button>
     <!--INÍCIO BARRA LATERAL-->
         <div id="barraLateral">
             <div id="tresBarraContainer">
-                <img src="imgs/tresbarra.png" id="tresBarraFinal" onclick="barFunction()">
+                <img src="../assets/tresbarra.png" id="tresBarraFinal" onclick="barFunction()">
             </div>
             <div class="flex barraOpcoes">
-                <img src="imgs/tremICON.png" alt="">
+                <img src="../assets/tremICON.png" alt="">
                 <h2>Relatório Trens</h2>
             </div>
             <hr>
             <div class="flex barraOpcoes">
-                <img src="imgs/localizacaoICON.png" alt="">
+                <img src="../assets/localizacaoICON.png" alt="">
                 <h2>Relatório Rotas</h2>
             </div>
             <hr>
             <div class="flex barraOpcoes">
-                <img src="imgs/userICON.png" alt="">
+                <img src="../assets/userICON.png" alt="">
                 <h2>Perfil</h2>
             </div>
             <hr>
             <div class="flex barraOpcoes">
-                <img src="imgs/alertaICON.png" alt="">
+                <img src="../assets/alertaICON.png" alt="">
                 <h2>Alertas</h2>
             </div>
             <hr>

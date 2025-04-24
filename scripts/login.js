@@ -27,6 +27,6 @@ function enviarform() {
         }
     } else {
         alert("Login efetuado com sucesso!")
-        window.location.replace("../homepage.html")
+        window.location.replace("../public/homepage.html")
     }
 }
