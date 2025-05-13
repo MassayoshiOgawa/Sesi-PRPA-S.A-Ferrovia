@@ -28,3 +28,7 @@ function irParaAbaNotificacoes() {
 function irParaAbaPerfil() {
     window.location.replace("../public/perfil.html")
 }
+
+function irParaAbaRelatorioTrens(){
+    window.location.replace("../public/trens.html")
+}
