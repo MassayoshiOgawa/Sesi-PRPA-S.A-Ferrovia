@@ -24,3 +24,7 @@ function barFunction() {
 function irParaAbaNotificacoes() {
     window.location.replace("../public/notificacoes.html")
 }
+
+function irParaAbaPerfil() {
+    window.location.replace("../public/perfil.html")
+}
