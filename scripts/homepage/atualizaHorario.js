@@ -1,4 +1,4 @@
-
+// doc criado para o horário da página homepage(localizado no canto superior direito)
 setInterval(() => {
     const hora = new Date();
     const minuto = new Date();

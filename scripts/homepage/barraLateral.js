@@ -2,6 +2,8 @@ const barra = document.getElementById("barraLateral")
 const tresBarraInicial = document.getElementById("tresBarrasInicial")
 const tresBarraFinal = document.getElementById("tresBarrasFinal")
 
+// doc js criado para colocar o código que faz a Barra Lateral funcionar(ficar invisivel, ficar visivel, funcionavel etc)
+
 let estado = 1
 
 barra.style.opacity = 0
@@ -17,4 +19,8 @@ function barFunction() {
         barra.style.opacity = 1
         barra.style.pointerEvents = "auto"
     }
+}
+
+function irParaAbaNotificacoes() {
+    window.location.replace("../public/notificacoes.html")
 }
