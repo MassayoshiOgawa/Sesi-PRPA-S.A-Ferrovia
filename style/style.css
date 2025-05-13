@@ -279,3 +279,36 @@ height: 100%;
     /*Classe usada para ver a "hitbox" das divs(área)*/
     background-color: blue;
 }
+.voltarICON{
+    margin: 20px;
+    height: 75%;
+}
+
+.dim{
+    height: 285px;
+    margin: auto;
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.par{
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.nomesla{
+    font-size: 50px;
+    text-align: center;
+}
+
+.per{
+    margin: 0;
+}
