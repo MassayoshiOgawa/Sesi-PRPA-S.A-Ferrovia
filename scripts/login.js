@@ -23,7 +23,7 @@ function enviarform() {
             return;
         } else {
             alert("Login efetuado com sucesso!")
-            window.location.replace("../homepage.html")
+            window.location.replace("../public/homepage.html")
         }
     } else {
         alert("Login efetuado com sucesso!")
