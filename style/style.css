@@ -176,12 +176,13 @@ height: 100%;
 }
 
 .containerNotificacoes{
+    margin: auto;
     margin-top: 20px;
-    width: 100%;
     height: 450px;
     gap: 10px;
     overflow: hidden;
     overflow-y: scroll;
+    max-width: 400px;
 }
 
 .containerNotificacoes .notificacoes{
@@ -202,10 +203,12 @@ height: 100%;
 .notiLeft{
     height: 100%;
     width: 70%;
-    background-color: red;
 }
 
+
+
 .notiLeftLine{
+    display: flex;
     height: 22%;
     width: 100%;
     background-color: black;
@@ -215,6 +218,23 @@ height: 100%;
     height: 56%;
     background-color: gray;
     width: 100%;
+}
+
+.notiLeftMiddle .descricao{
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.leftLineLabel{
+    display: flex;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    align-items: center;
+    margin-left: 8px;
 }
 
 .notiRightICON{
