@@ -9,10 +9,16 @@
 </head>
 <body>
     <header style="background-color: rgba(255, 0, 0, 0);">
-        <img src="../assets/voltarICON.png" alt="" class="voltarICON">
+        <img src="../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar(1)">
     </header>
     <main>
-
+        <form id="escreverNotificacao_form">
+            <p>Identificação do Trem: <input type="text" id="inNome"></p>
+            <p>Descrição do Problema: <input type="text" id="inDesc"></p>
+            <p>Grau de Perigo: <input type="text" id="inGrau"></p>
+            <p>Horário do Ocorrido: <input type="text" id="inHorario"></p>
+            <button type="submit" onclick="enviarFormulario()">Enviar</button>
+        </form>
     </main>
     <footer>
 
