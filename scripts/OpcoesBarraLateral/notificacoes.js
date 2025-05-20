@@ -1,5 +1,5 @@
 function relatar() {
-    window.location.replace("../public/perfil.html")
+    window.location.replace("../public/escreverNotificacao.html")
 }
 
 const aux = document.getElementById("mainNoticia")
