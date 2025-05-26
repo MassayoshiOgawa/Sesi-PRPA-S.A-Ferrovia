@@ -14,6 +14,10 @@ function voltar(n) {
     }
 }
 
+const aux = document.getElementById("mainNoticia");
+const container = document.getElementById("containerNotificacoes");
+const noticiaOriginal = aux.cloneNode(true);
+aux.remove()
 
 function enviarFormulario() {
     for (var i = 0; i < 99; i++) {
@@ -24,18 +28,13 @@ function enviarFormulario() {
             localStorage.setItem(`notiTrem${i}_desc`, form.inDesc.value)
             localStorage.setItem(`notiTrem${i}_grau`, form.inGrau.value)
             localStorage.setItem(`notiTrem${i}_horario`, form.inHorario.value)
+            localStorage.setItem(`notiTrem${i}_estado`, 1)
             alert("registrado")
             break
         } 
     }
 }
 
-document.getElementById
-
-const aux = document.getElementById("mainNoticia");
-const container = document.getElementById("containerNotificacoes");
-const noticiaOriginal = aux.cloneNode(true);
-aux.remove()
 
 for (var i = 0; i < 99; i++) {
     if (localStorage.getItem(`notiTrem${i}`)) {
@@ -44,15 +43,24 @@ for (var i = 0; i < 99; i++) {
         if (rand == 1) {
             state = "Não Resolvido"
         }
-        const cloneN = noticiaOriginal.cloneNode(true);
-        cloneN.querySelector("#noti_nome").textContent = localStorage.getItem(`notiTrem${i}_nome`);
-        cloneN.querySelector("#noti_desc").textContent = localStorage.getItem(`notiTrem${i}_desc`);
-        cloneN.querySelector("#noti_estado").textContent = localStorage.getItem(`notiTrem${i}_estado`);
-        cloneN.querySelector("#noti_grau").textContent = localStorage.getItem(`notiTrem${i}_grau`);
-        cloneN.querySelector("#noti_horario").textContent = localStorage.getItem(`notiTrem${i}_horario`);
-        cloneN.querySelector("#noti_estado").textContent = `Estado: ${state}`
-        container.appendChild(cloneN);
+        if (localStorage.getItem(`notiTrem${i}_estado`) == 1) {
+            const cloneN = noticiaOriginal.cloneNode(true);
+            cloneN.querySelector("#noti_nome").textContent = localStorage.getItem(`notiTrem${i}_nome`);
+            cloneN.querySelector("#noti_desc").textContent = localStorage.getItem(`notiTrem${i}_desc`);
+            cloneN.querySelector("#noti_estado").textContent = localStorage.getItem(`notiTrem${i}_estado`);
+            cloneN.querySelector("#noti_grau").textContent = localStorage.getItem(`notiTrem${i}_grau`);
+            cloneN.querySelector("#noti_horario").textContent = localStorage.getItem(`notiTrem${i}_horario`);
+            cloneN.id = i
+            cloneN.querySelector("#noti_estado").textContent = `Estado: ${state}`
+            container.appendChild(cloneN);
+        }
     } else {
         break;
     }
+}
+
+function deletar(div){
+    var id = div.id
+    localStorage.setItem(`notiTrem${id}_estado`, 0)
+    div.remove()
 }
