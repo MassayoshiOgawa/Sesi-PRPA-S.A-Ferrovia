@@ -336,3 +336,15 @@ height: 100%;
     margin-top: 40px;
     box-shadow: 5px 5px 1px black;
 }
+
+.caixaTri{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+.caixaTri img{
+    height: 10%;
+    width: 10%;
+}
