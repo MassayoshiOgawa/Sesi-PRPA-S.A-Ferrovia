@@ -336,3 +336,14 @@ height: 100%;
     margin-top: 40px;
     box-shadow: 5px 5px 1px black;
 }
+
+.but{
+    height: 50px;
+    width: 60%;
+    background-color: #F58430;
+}
+
+.ca{
+    display: flex;
+    justify-content: center;
+}
