@@ -337,6 +337,28 @@ height: 100%;
     box-shadow: 5px 5px 1px black;
 }
 
+.but{
+    height: 50px;
+    width: 60%;
+    background-color: #F58430;
+}
+
+.ca{
+    display: flex;
+    justify-content: center;
+}
+
+.but{
+    height: 50px;
+    width: 60%;
+    background-color: #F58430;
+}
+
+.ca{
+    display: flex;
+    justify-content: center;
+}
+
 .caixaTri{
     display: flex;
     align-items: center;
