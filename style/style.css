@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #fff1dc;
@@ -6,7 +6,7 @@ body{
     overflow: hidden;
 }
 
-.cab{
+.cab {
     background-color: #F58430;
     width: 100%;
     height: 150px;
@@ -15,33 +15,37 @@ body{
     justify-content: center
 }
 
-.logo{
+.logo {
     height: 100%;
     margin-top: 10px;
 }
 
 
-#form{
+#form {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#nome{
-   background-color: black;
-   color: white;
-   border-color: black;
+
+#nome {
+    background-color: black;
+    color: white;
+    border-color: black;
 }
-#senha{
+
+#senha {
     background-color: black;
     color: white;
     border-color: black;
- }
- #cadastro{
+}
+
+#cadastro {
     background-color: black;
     color: white;
     border-color: black;
- }
-.inpput{
+}
+
+.inpput {
     background-color: rgb(114, 114, 114);
     color: white;
     width: 100%;
@@ -50,29 +54,34 @@ body{
     padding: 5px 20px;
 }
 
-#loginbutton{
+#loginbutton {
     background-color: #f2a42d;
     width: 40%;
     height: 25%;
 }
 
-.center{
+.center {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-footer > p{
-    margin: 0; padding: 0; font-size: 11px; text-align: center; margin-top: 200px; color: rgba(79, 79, 79, 0.649);
+footer>p {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 200px;
+    color: rgba(79, 79, 79, 0.649);
 }
 
-.inputTag{
+.inputTag {
     all: unset;
     width: 100%;
 }
 
-hr{
+hr {
     width: 100%;
     margin-top: -0.01px;
 }
@@ -84,20 +93,20 @@ header {
     height: 90px;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-header > div{
-height: 100%;
+header>div {
+    height: 100%;
 }
 
-.width{
+.width {
     width: 100%;
 }
 
 
-.headerMiddleBox{
+.headerMiddleBox {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -105,18 +114,18 @@ height: 100%;
     text-align: center;
 }
 
-.headerSideBox{
+.headerSideBox {
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.headerImage{
+.headerImage {
     height: 50px;
 }
 
-#barraLateral{
+#barraLateral {
     position: fixed;
     top: 0;
     width: 85%;
@@ -126,11 +135,11 @@ height: 100%;
     overflow: hidden;
 }
 
-#barraLateral > h2{
+#barraLateral>h2 {
     color: black;
 }
 
-#tresBarraContainer{
+#tresBarraContainer {
     height: 70px;
     width: 100%;
     margin-bottom: 70px;
@@ -141,21 +150,21 @@ height: 100%;
     margin: 10px 19px;
 }
 
-.center{
+.center {
     margin: auto;
 }
 
 
-#barraLateral > hr{
+#barraLateral>hr {
     border: 2px dashed rgb(0, 0, 0);
     width: 100%;
 }
 
-#barraLateral > div > img{
+#barraLateral>div>img {
     height: 80%;
 }
 
-.barraOpcoes{
+.barraOpcoes {
     height: 70px;
     display: flex;
     justify-content: start;
@@ -164,12 +173,12 @@ height: 100%;
     gap: 10px;
 }
 
-.voltarICON{
+.voltarICON {
     margin: 20px;
     height: 75%;
 }
 
-.containerNotificacoes{
+.containerNotificacoes {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -181,7 +190,7 @@ height: 100%;
     max-width: 400px;
 }
 
-.containerNotificacoes .notificacoes{
+.containerNotificacoes .notificacoes {
     width: 90%;
     height: 200px;
     background-color: rgb(0, 0, 0);
@@ -189,41 +198,41 @@ height: 100%;
     margin-top: 10px;
 }
 
-.notiRight{
+.notiRight {
     height: 100%;
     width: 30%;
     background-color: orange;
     justify-content: center;
 }
 
-.notiLeft{
+.notiLeft {
     height: 100%;
     width: 70%;
 }
 
 
 
-.notiLeftLine{
+.notiLeftLine {
     display: flex;
     height: 22%;
     width: 100%;
     background-color: black;
 }
 
-.notiLeftMiddle{
+.notiLeftMiddle {
     height: 56%;
     background-color: gray;
     width: 100%;
 }
 
-.notiLeftMiddle .descricao{
+.notiLeftMiddle .descricao {
     margin: 0;
     padding: 10px;
     color: white;
     font-size: 20px;
 }
 
-.leftLineLabel{
+.leftLineLabel {
     display: flex;
     color: white;
     margin: 0;
@@ -233,59 +242,60 @@ height: 100%;
     margin-left: 8px;
 }
 
-.notiRightICON{
+.notiRightICON {
     width: 80%;
     margin-left: 10%;
     margin-top: 10px;
 }
 
-.notiRightDiv{
+.notiRightDiv {
     /*Divs para separar a parte do Grau de perigo e o horário do alerta*/
     width: 100%;
     height: 100%;
 }
 
-.notiRightGrau{
+.notiRightGrau {
     text-align: center;
 }
 
-.labelGrau{
+.labelGrau {
     margin: 0;
     color: red;
     font-size: 35px;
 }
 
-.notiRightHorario{
+.notiRightHorario {
     text-align: center;
 }
 
-.labelHorario{
+.labelHorario {
     color: white;
     margin: 0;
     padding: 0;
     font-size: 27px;
 }
 
-.red{
+.red {
     /*Classe usada para ver a "hitbox" das divs(área)*/
     background-color: red;
 }
 
-.blue{
+.blue {
     /*Classe usada para ver a "hitbox" das divs(área)*/
     background-color: blue;
 }
-.voltarICON{
+
+.voltarICON {
     margin: 20px;
     height: 75%;
 }
 
-.dim{
+.dim {
     height: 285px;
     margin: auto;
 }
 
-.cont{
+.cont {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -294,42 +304,39 @@ height: 100%;
     justify-content: center;
 }
 
-.par{
+.par {
     text-align: center;
     font-size: 20px;
-    
+
 }
 
-.nomesla{
+.nomesla {
     font-size: 50px;
     text-align: center;
 }
 
-.per{
+.per {
     margin: 0;
 }
-.voltarICON{
+
+.voltarICON {
     margin: 20px;
     height: 75%;
 }
 
-.BoxStatus{
-    background-color:darkgrey;
-    border-radius: 5px ;
+.BoxStatus {
+    background-color: darkgrey;
+    border-radius: 5px;
     padding: 3px;
     margin: 5%;
     height: 50px;
     overflow: hidden;
-    
+
 
 }
-.PaginaTrens{
-    display: flex;
-    flex-direction: column;
-    padding: 9%;
-}
 
-#botaoRelatar{
+
+#botaoRelatar {
     background-color: rgba(255, 166, 0, 0.788);
     width: 260px;
     text-align: center;
@@ -338,36 +345,68 @@ height: 100%;
     box-shadow: 5px 5px 1px black;
 }
 
-.but{
+.but {
     height: 50px;
     width: 60%;
     background-color: #F58430;
 }
 
-.ca{
+.ca {
     display: flex;
     justify-content: center;
 }
 
-.but{
+.but {
     height: 50px;
     width: 60%;
     background-color: #F58430;
 }
 
-.ca{
+.ca {
     display: flex;
     justify-content: center;
 }
 
-.caixaTri{
+/*Pertence a tren.html*/
+
+.ContainerTren {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+  
+}
+
+.ContainerTren h1 {
+    margin: 0;
+}
+
+
+.caixaTriangulo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-content: flex-start;
+    
     margin: 5px;
+
 }
 
-.caixaTri img{
+.caixaTriangulo img {
     height: 10%;
     width: 10%;
 }
+
+
+.InfoMotorista {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.InfoMotorista img{
+    height: 100%;
+    width: 40%;
+    margin: 0%;
+    
+}
+
