@@ -323,10 +323,11 @@ height: 100%;
     
 
 }
-.PaginaTrens{
+.containerTrem{
     display: flex;
     flex-direction: column;
     padding: 9%;
+    
 }
 
 #botaoRelatar{
