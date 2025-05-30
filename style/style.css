@@ -400,6 +400,36 @@ header>div {
 }
 
 
+.Rotas_IdBlock1{
+    background-color: blue;
+    height: 25px;
+    width: 65px;
+}
+
+
+
+.Rotas_IdBlock2{
+    background-color: rgb(54, 255, 98);
+    height: 25px;
+    width: 65px;
+}
+
+
+
+
+.Rotas_IdBlock3{
+    background-color: rgb(187, 65, 181);
+    height: 25px;
+    width: 65px;
+}
+
+
+.Rotas_IdBlock4{
+background-color: rgb(240, 61, 61);
+    height: 25px;
+    width: 65px;
+}
+
 .InfoMotorista {
     display: flex;
     justify-content: space-between;
