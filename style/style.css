@@ -334,7 +334,11 @@ header>div {
 
 
 }
-
+.PaginaTrens{
+    display: flex;
+    flex-direction: column;
+    padding: 9%;
+}
 
 #botaoRelatar {
     background-color: rgba(255, 166, 0, 0.788);
