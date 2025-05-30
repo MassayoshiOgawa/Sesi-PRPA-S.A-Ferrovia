@@ -16,7 +16,7 @@ function abrir(box){
             currBox.style.height = tamanho;
             currTri.style.transform = "rotate(0deg)";
             print("A")
-            tamanho = "1000px";
+            tamanho = "500px";
             box.style.height = tamanho;
             tri.style.transform = "rotate(180deg)";
             estado = false;
@@ -26,7 +26,7 @@ function abrir(box){
     }
     
     if (estado == false){
-        tamanho = "1000px";
+        tamanho = "500px";
         tri.style.transform = "rotate(180deg)";
         box.style.height = tamanho;
         estado = true;
