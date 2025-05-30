@@ -46,3 +46,7 @@ function abrir(box){
     
 
 }
+
+function voltar(){
+    window.location.replace("../public/homepage.html")
+}
