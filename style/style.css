@@ -336,3 +336,37 @@ height: 100%;
     margin-top: 40px;
     box-shadow: 5px 5px 1px black;
 }
+
+.relatarContainer{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.relatarLabel{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+
+.relatarInput {
+    all: unset;
+    min-height: 50px;
+    background-color: rgb(114, 114, 114);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 4px 5px 1px #F58430;
+    padding: 5px 20px;
+    resize: none; /* impede redimensionamento manual, opcional */
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
+  
+
+.relatarSubmit{
+    width: 70px;
+    margin: auto;
+    margin-top: 30px;
+}
