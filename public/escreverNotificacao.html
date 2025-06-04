@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
     <link rel="stylesheet" href="../style/style.css">
     <script src="../scripts/OpcoesBarraLateral/notificacoes.js" defer></script>
     <title>Relatar</title>
@@ -24,10 +25,13 @@
             <input type="text" id="inGrau" class="relatarInput">
             <label class="relatarLabel">Horário do Ocorrido:</label>
             <input type="text" id="inHorario" class="relatarInput">
-            <button type="submit" onclick="enviarFormulario()" class="relatarSubmit">Enviar</button>
         </form>
     </main>
-    <footer></footer>
+    <footer>
+        <br>
+        <br>
+        <h1 onclick="enviarFormulario()" id="botaoRelatar">Enviar</h1>
+        <br>
 
     </footer>
 </body>
