@@ -21,7 +21,7 @@
         </div>
     </header>
     <main>
-        <button><a href="../public/index.html">Voltar Para login</a></button>
+        
     <!--INÍCIO BARRA LATERAL-->
         <div id="barraLateral">
             <div id="tresBarraContainer">
@@ -32,8 +32,8 @@
                 <h2>Relatório Trens</h2>
             </div>
             <hr>
-            <div class="flex barraOpcoes">
-                <img src="../assets/localizacaoICON.png" alt="">
+            <div class="flex barraOpcoes" onclick="irParaAbaRelatorioRotas()">
+                <img src="../assets/localizacaoICON.png" alt=""  >
                 <h2>Relatório Rotas</h2>
             </div>
             <hr>
@@ -45,6 +45,11 @@
             <div class="flex barraOpcoes" onclick="irParaAbaNotificacoes()">
                 <img src="../assets/alertaICON.png" alt="">
                 <h2>Alertas</h2>
+            </div>
+            <hr>
+            <div class="flex barraOpcoes" onclick="logOut()">
+                <img src="../assets/logoutIcon.jpeg" alt="">
+                <h2>Voltar Para login</h2>
             </div>
             <hr>
         </div>

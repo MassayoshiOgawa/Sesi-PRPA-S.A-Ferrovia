@@ -32,3 +32,11 @@ function irParaAbaPerfil() {
 function irParaAbaRelatorioTrens(){
     window.location.replace("../public/trens.html")
 }
+
+function irParaAbaRelatorioRotas(){
+    window.location.replace("../public/rotas.html")
+}
+
+function logOut(){
+    window.location.replace("../public/index.html")
+}
