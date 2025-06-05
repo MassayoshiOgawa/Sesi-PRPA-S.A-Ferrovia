@@ -474,12 +474,14 @@ background-color: rgb(240, 61, 61);
 
 .InfoMotorista {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
 
 
-.InfoMotorista img{
-   background-color: rgba(255, 0, 0, 0);
+.motoristaImg{
+    height: 80%;
+    width: 50%;
+    margin-left: 20%;
 }
 
