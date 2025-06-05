@@ -32,3 +32,7 @@ function irParaAbaPerfil() {
 function irParaAbaRelatorioTrens(){
     window.location.replace("../public/trens.html")
 }
+
+function logOut(){
+    window.location.replace("../public/index.html")
+}
