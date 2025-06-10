@@ -286,14 +286,21 @@ header>div {
     background-color: blue;
 }
 
+    /*Classes do perfil*/
 .voltarICON {
     margin: 20px;
     height: 75%;
 }
+.botaoEnviarPerfil{
+    height: 40px;
+    background-color: #f2a42d;
+}
 
-.dim {
-    height: 285px;
+.PerfilIcon {
+    height: 150px;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .cont {
@@ -306,8 +313,9 @@ header>div {
 }
 
 .par {
-    text-align: center;
+    text-align:  center;
     font-size: 20px;
+    
 
 }
 
@@ -318,6 +326,11 @@ header>div {
 
 .per {
     margin: 0;
+    text-align: left;
+    padding-right: 10 px;
+    width: 150px;
+
+
 }
 
 .voltarICON {
@@ -339,6 +352,11 @@ header>div {
     display: flex;
     flex-direction: column;
     padding: 9%;
+}
+
+.info{
+    padding-right: 10px;
+
 }
 
 #botaoRelatar {
@@ -369,6 +387,7 @@ header>div {
     font-size: 20px;
     margin-left: 10px;
 }
+
 
 .relatarInput {
     all: unset;
