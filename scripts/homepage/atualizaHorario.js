@@ -1,19 +1,20 @@
-// doc criado para o horário da página homepage(localizado no canto superior direito)
-setInterval(() => {
-    const hora = new Date();
-    const minuto = new Date();
-    horaF = hora.getHours()
-    minutoF = minuto.getMinutes()
+document.addEventListener("DOMContentLoaded", () => {
+    setInterval(() => {
+        const hora = new Date();
+        let horaF = hora.getHours();
+        let minutoF = hora.getMinutes();
 
-    
-    if (minutoF < 10) {
-        minutoF = `0${minutoF}`
-    }
-    
-    if (horaF < 10) {
-        horaF = `0${horaF}`
-    }
+        if (minutoF < 10) {
+            minutoF = `0${minutoF}`;
+        }
 
-    const labelHorario = document.getElementById("horarioJS")
-    labelHorario.innerText = `${horaF}:${minutoF}`
-}, 0o100);
+        if (horaF < 10) {
+            horaF = `0${horaF}`;
+        }
+
+        const labelHorario = document.getElementById("horarioJS");
+        if (labelHorario) {
+            labelHorario.textContent = `${horaF}:${minutoF}`;
+        }
+    }, 100);
+});
