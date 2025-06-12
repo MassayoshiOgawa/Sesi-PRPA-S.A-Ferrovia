@@ -16,8 +16,16 @@
         </div>
 
         <div id="form">
-            <form id="loginForm" class="center">
-                
+            <form id="SenhaForm" class="center">
+                <div class="inpput">
+                    <label for="REmail">Email:</label><br>
+                    <input type="email" id="REmail" name="REmail" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
+                <button type="button" onclick="enviarEmail()" id="recuperarSenhaBut">Enviar</button>
+                <br>
+                <button type="button" onclick="irLogin()" id="recuperarSenhaBut">Voltar para login</button>
             </form>
         </div>
 

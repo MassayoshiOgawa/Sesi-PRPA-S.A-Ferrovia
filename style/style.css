@@ -67,6 +67,12 @@ body {
     height: 25%;
 }
 
+#recuperarSenhaBut {
+    background-color: #f2a42d;
+    margin-left: 4%;
+    height: 25%;
+}
+
 .center {
     display: flex;
     flex-direction: column;
