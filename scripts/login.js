@@ -9,13 +9,13 @@ function enviarform() {
     const cadastro = form.inCadastro.value;
 
     if (nome == "") {
-        alert("Nome é obrigatório");
+        alert("Preencha todos os campos");
         return;
     } else if (senha == "") {
-        alert("Senha é obrigatório");
+        alert("Preencha todos os campos");
         return;
     } else if (cadastro == "") {
-        alert("Cadastro é obrigatório");
+        alert("Preencha todos os campos");
         return;
     }
 
