@@ -1,28 +1,42 @@
 function enviarCadastro() {
     const form = document.getElementById("formCadastro");
-    const nome = form.inNome.value.trim();
-    const senha = form.inSenha.value.trim();
-    const Csenha = form.inCSenha.value.trim();
-    const email = form.inEmail.value.trim();
-    const celular = form.inCelular.value.trim();
-    
+    const nome = form.Nome.value.trim();
+    const senha = form.Senha.value.trim();
+    const Csenha = form.CSenha.value.trim();
+    const email = form.Email.value.trim();
+    const celular = form.Celular.value.trim();
+
     if (nome == "") {
-        alert("Nome é obrigatório");
-        return;
-    } else if (senha == "") {
-        alert("Senha é obrigatório");
-        return;
-    } else if (cadastro == "") {
-        alert("Cadastro é obrigatório");
+        alert("Preencha todos os campos");
         return;
     }
+    if (senha == "") {
+        alert("Preencha todos os campos");
+        return;
+    }
+    if (Csenha == "") {
+        alert("Preencha todos os campos");
+        return;
+    }
+    if (email == "") {
+        alert("Preencha todos os campos");
+        return;
+    }
+    if (celular == "") {
+        alert("Preencha todos os campos");
+        return;
+    }
+
 
     if (senha.length !== 8) {
         alert("Senha precisa de 8 caracteres")
         return;
     }
 
-    console.log(nome);
-    console.log(senha);
-    console.log(cadastro);
+    if (senha !== Csenha) {
+        alert("As senhas precisam ser iguais")
+        return;
+    }
+
+    window.location.replace("../public/index.html")
 }
