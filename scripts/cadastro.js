@@ -1,15 +1,9 @@
-function print(msg) {
-    console.log(msg);
-}
-
-
 function enviarCadastro() {
-    const form = document.getElementById("formCadastro");
+    const form = document.getElementById("loginForm");
     const nome = form.inNome.value.trim();
     const senha = form.inSenha.value.trim();
-    const Csenha = form.inCSenha.value.trim();
-    const email = form.inEmail.value.trim();
-    const celular = form.inCelular.value.trim();
+    const cadastro = form.inCadastro.value;
+
 
     if (nome == "") {
         alert("Nome é obrigatório");
@@ -30,8 +24,4 @@ function enviarCadastro() {
     console.log(nome);
     console.log(senha);
     console.log(cadastro);
-}
-
-function abrirCadastro(){
-    window.location.replace("../public/cadastro.html")
 }

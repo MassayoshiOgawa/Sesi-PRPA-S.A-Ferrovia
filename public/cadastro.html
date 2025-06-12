@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../scripts/login.js" defer></script>
     <link rel="stylesheet" href="../style/style.css">
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -15,11 +15,25 @@
             <img class="logo" src="../assets/logo.png" alt="">
         </div>
 
-        <div id="form">
+        <div id="formCadastro">
             <form id="loginForm" class="center">
                 <div class="inpput">
                     <label for="nome">Nome:</label><br>
                     <input type="text" id="inNome" name="nome" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
+
+                <div class="inpput">
+                    <label for="cadastro">Celular:</label><br>
+                    <input type="number" id="inCelular" name="cadastro" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
+
+                <div class="inpput">
+                    <label for="cadastro">Email:</label><br>
+                    <input type="number" id="inEmail" name="cadastro" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
@@ -32,15 +46,16 @@
                 <br>
 
                 <div class="inpput">
-                    <label for="cadastro">Nº Cadastro:</label><br>
-                    <input type="number" id="inCadastro" name="cadastro" class="inputTag" required>
+                    <label for="senha">Confirmar Senha:</label><br>
+                    <input type="password" id="inCSenha" name="senha" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
-                <div class="flex">
-                    <button type="button" onclick="enviarform()" id="loginbutton">Enviar</button>
-                    <button type="button" onclick="abrirCadastro()" id="cadastroButton">Cadastro</button>
-                </div>
+
+
+
+                <button type="button" onclick="enviarCadastro()" id="cadastroButton">Cadastro</button>
+
             </form>
         </div>
 
