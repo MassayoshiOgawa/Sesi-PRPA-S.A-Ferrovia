@@ -144,7 +144,7 @@ header>div {
     width: 85%;
     height: 100%;
     background-color: #ffd79a;
-    z-index: 1;
+    z-index: 20;
     overflow: hidden;
 }
 
