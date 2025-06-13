@@ -38,5 +38,7 @@ function enviarCadastro() {
         return;
     }
 
+    alert("Dados Salvos!");
+
     window.location.replace("../public/index.html")
 }
