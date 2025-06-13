@@ -33,14 +33,14 @@ function enviarform() {
             if (!localStorage.getItem("user")) {
                 localStorage.setItem("user", nome)
             }
-            window.location.replace("../public/homepage.html")
+            window.location.replace("public/homepage.html")
         }
     } else {
         alert("Login efetuado com sucesso!")
         if (!localStorage.getItem("user")) {
                 localStorage.setItem("user", nome)
             }
-        window.location.replace("../public/homepage.html")
+        window.location.replace("public/homepage.html")
     }
 
 
@@ -49,5 +49,5 @@ function enviarform() {
 }
 
 function abrirCadastro(){
-    window.location.replace("../public/cadastro.html")
+    window.location.replace("public/cadastro.html")
 }
