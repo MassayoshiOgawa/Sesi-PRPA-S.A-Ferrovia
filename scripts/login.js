@@ -19,7 +19,7 @@ function enviarform() {
         return;
     }
 
-    if (senha.length !== 8) {
+    if (senha.length >= 8) {
         alert("Senha precisa de 8 caracteres")
         return;
     }
@@ -27,9 +27,9 @@ function enviarform() {
     console.log(nome);
     console.log(senha);
     console.log(cadastro);
-    window.location.replace("../public/homepage.html")
+    window.location.replace("public/homepage.html")
 }
 
 function abrirCadastro(){
-    window.location.replace("../public/cadastro.html")
+    window.location.replace("public/cadastro.html")
 }
