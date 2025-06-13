@@ -40,5 +40,9 @@ function enviarCadastro() {
 
     alert("Dados Salvos!");
 
-    window.location.replace("../public/index.html")
+    window.location.replace("../index.html")
+}
+
+function voltarLogin() {
+    window.location.replace("../index.html")
 }

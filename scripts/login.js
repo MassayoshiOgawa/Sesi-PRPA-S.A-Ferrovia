@@ -1,4 +1,4 @@
-function print(msg) {More actions
+function print(msg) {
     console.log(msg);
 }
 

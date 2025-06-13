@@ -15,6 +15,6 @@ function enviarEmail() {
 }
 
 function irLogin() {
-    window.location.replace("../public/index.html")
+    window.location.replace("../index.html")
 
 }

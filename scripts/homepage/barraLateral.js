@@ -38,5 +38,5 @@ function irParaAbaRelatorioRotas(){
 }
 
 function logOut(){
-    window.location.replace("../public/index.html")
+    window.location.replace("../index.html")
 }
