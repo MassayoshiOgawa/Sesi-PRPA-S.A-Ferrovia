@@ -488,6 +488,8 @@ header>div {
     background-color: rgb(54, 255, 98);
     height: 25px;
     width: 65px;
+        margin-top: 8px;
+
 }
 
 
@@ -497,6 +499,8 @@ header>div {
     background-color: rgb(187, 65, 181);
     height: 25px;
     width: 65px;
+        margin-top: 8px;
+
 }
 
 
@@ -504,6 +508,8 @@ header>div {
 background-color: rgb(240, 61, 61);
     height: 25px;
     width: 65px;
+        margin-top: 8px;
+
 }
 
 .InfoMotorista {
