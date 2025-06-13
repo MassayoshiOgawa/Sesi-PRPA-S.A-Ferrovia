@@ -5,19 +5,13 @@ function print(msg) {
 /* Dois vetores que armazenam os usuarios e as senhas de forma respectiva */
 const usuarios = ["adm", "Leandro Massayoshi Ogawa", "Pedro Henrique Monteiro Oliveira", "Enzo Souza"]
 const senhas = ["adm", "abacaxi123", "javascript123", "porco321"]
-
 // Função para validar caracteres proibidos
-function possuiCaracteresInvalidos(texto) {
-   const nomeRegex = /[1234567890'"()*;]/
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function possuiCaracteresInvalidos(texto, campo) {
+        const nomeRegex = /[1234567890'"()*;]/
         const regex = /['"()*;]/; 
 
-        if (texto == nome) {
+        if (campo == "nome") {
             return nomeRegex.test(texto)
-        }
-
-        if (texto == email) {
-            return emailRegex.test(texto)
         }
 
         return regex.test(texto);
@@ -30,11 +24,15 @@ function enviarform() {
     const cadastro = parseInt(frm.inCadastro.value);
 
     // Valida os campos nome e senha para caracteres inválidos
-    if (possuiCaracteresInvalidos(nome)) {
+    if (possuiCaracteresInvalidos(nome, "nome")) {
         alert("O campo Nome contém caracteres inválidos!");
         return;
     }
-    if (possuiCaracteresInvalidos(senha)) {
+    if (possuiCaracteresInvalidos(senha, "senha")) {
+        alert("O campo Senha contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(cadastro, "cadastro")) {
         alert("O campo Senha contém caracteres inválidos!");
         return;
     }

@@ -6,16 +6,16 @@ function enviarCadastro() {
     const email = form.Email.value.trim();
     const celular = form.Celular.value.trim();
     
-    function possuiCaracteresInvalidos(texto) {
+    function possuiCaracteresInvalidos(texto, campo) {
         const nomeRegex = /[1234567890'"()*;]/
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const regex = /['"()*;]/; 
 
-        if (texto == nome) {
+        if (campo == "nome") {
             return nomeRegex.test(texto)
         }
 
-        if (texto == email) {
+        if (campo == "email") {
             return emailRegex.test(texto)
         }
 
@@ -28,23 +28,23 @@ function enviarCadastro() {
         return;
     }
 
-    if (possuiCaracteresInvalidos(nome)) {
+    if (possuiCaracteresInvalidos(nome, "nome")) {
         alert("O campo Nome contém caracteres inválidos!");
         return;
     }
-    if (possuiCaracteresInvalidos(senha)) {
+    if (possuiCaracteresInvalidos(senha, "senha")) {
         alert("O campo Senha contém caracteres inválidos!");
         return;
     }
-    if (possuiCaracteresInvalidos(Csenha)) {
+    if (possuiCaracteresInvalidos(Csenha, "csenha")) {
         alert("O campo Confirmar Senha contém caracteres inválidos!");
         return;
     }
-    if (possuiCaracteresInvalidos(email)) {
+    if (possuiCaracteresInvalidos(email, "email")) {
         alert("O campo Email contém caracteres inválidos!");
         return;
     }
-    if (possuiCaracteresInvalidos(celular)) {
+    if (possuiCaracteresInvalidos(celular, "celular")) {
         alert("O campo Celular contém caracteres inválidos!");
         return;
     }

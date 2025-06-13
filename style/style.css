@@ -61,7 +61,7 @@ body {
     height: 25%;
 }
 
-#cadastroButton {
+.cadastroButton {
     background-color: #f2a42d;
     margin-left: 4%;
     height: 25%;
@@ -479,6 +479,7 @@ header>div {
     height: 25px;
     width: 65px;
     justify-content: center;
+    margin-top: 8px;
 }
 
 
