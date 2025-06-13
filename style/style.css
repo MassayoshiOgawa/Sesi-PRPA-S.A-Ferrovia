@@ -111,6 +111,11 @@ header {
     display: flex;
 }
 
+.flex2 {
+    display: flex;
+    align-items: center;
+}
+
 header>div {
     height: 100%;
 }
@@ -147,6 +152,7 @@ header>div {
     background-color: #ffd79a;
     z-index: 20;
     overflow: hidden;
+
 }
 
 #barraLateral>h2 {
@@ -313,12 +319,13 @@ header>div {
 
 
 
-    /*Classes do perfil*/
+/*Classes do perfil*/
 .voltarICON {
     margin: 20px;
     height: 75%;
 }
-.botaoEnviarPerfil{
+
+.botaoEnviarPerfil {
     height: 40px;
     background-color: #f2a42d;
 }
@@ -340,9 +347,9 @@ header>div {
 }
 
 .par {
-    text-align:  center;
+    text-align: center;
     font-size: 20px;
-    
+
 
 }
 
@@ -365,23 +372,14 @@ header>div {
     height: 75%;
 }
 
-.BoxStatus {
-    background-color: darkgray;
-    border-radius: 5px;
-    padding: 3px;
-    margin: 5%;
-    height: 50px;
-    overflow: hidden;
 
-
-}
-.PaginaTrens{
+.PaginaTrens {
     display: flex;
     flex-direction: column;
     padding: 9%;
 }
 
-.info{
+.info {
     padding-right: 10px;
 
 }
@@ -398,14 +396,14 @@ header>div {
 /*INÍCIO ESCOPO CSS DO ESCREVER NOTIFICAÇÕES*/
 
 
-.relatarContainer{
+.relatarContainer {
     width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
 }
 
-.relatarLabel{
+.relatarLabel {
     margin: 0;
     padding: 0;
     margin-bottom: 3px;
@@ -429,7 +427,7 @@ header>div {
     line-height: 1.4;
 }
 
-.relatarSubmit{
+.relatarSubmit {
     width: 70px;
     margin: auto;
     margin-top: 30px;
@@ -462,10 +460,29 @@ header>div {
 
 /*Pertence a tren.html*/
 
+.BoxStatus {
+    background-color: #ffd79a3b;
+    border-radius: 8px;
+    padding: 3px;
+    margin: 5%;
+    height: 50px;
+    overflow: hidden;
+    transition: 0.5s;
+   
+}
+.bloco{
+    background-color: #F58430;
+    height: 100%;
+    width: 6%;
+    margin-right: 5px;
+    color: #F58430;
+    font-size: x-small;
+}
+
 .ContainerTren {
     display: flex;
     flex-direction: column;
-  
+
 }
 
 .ContainerTren h1 {
@@ -479,6 +496,11 @@ header>div {
     justify-content: space-between;
     align-content: flex-start;
     margin: 5px;
+    
+}
+
+.infoTren {
+    padding: 5px;
 
 }
 
@@ -488,7 +510,7 @@ header>div {
 }
 
 
-.Rotas_IdBlock1{
+.Rotas_IdBlock1 {
     background-color: blue;
     height: 25px;
     width: 65px;
@@ -496,32 +518,31 @@ header>div {
     margin-top: 8px;
 }
 
-
-
-.Rotas_IdBlock2{
+.Rotas_IdBlock2 {
     background-color: rgb(54, 255, 98);
     height: 25px;
     width: 65px;
-        margin-top: 8px;
+    margin-top: 8px;
 
 }
 
 
 
 
-.Rotas_IdBlock3{
+.Rotas_IdBlock3 {
     background-color: rgb(187, 65, 181);
     height: 25px;
     width: 65px;
-        margin-top: 8px;
+    margin-top: 8px;
 
 }
 
 
-.Rotas_IdBlock4{
-background-color: rgb(240, 61, 61);
+.Rotas_IdBlock4 {
+    background-color: rgb(240, 61, 61);
     height: 25px;
     width: 65px;
+    margin-top: 8px;
     margin-top: 8px;
 
 }
@@ -529,11 +550,12 @@ background-color: rgb(240, 61, 61);
 .InfoMotorista {
     display: flex;
     justify-content: space-around;
-    
+    padding: 5px;
+
 }
 
 
-.motoristaImg{
+.motoristaImg {
     height: 80%;
     width: 50%;
     margin-left: 20%;
@@ -541,7 +563,7 @@ background-color: rgb(240, 61, 61);
 
 /*INICIO ESCOPO CSS HOMEPAGE MAPA*/
 
-.containerMapaFerrovia{
+.containerMapaFerrovia {
     width: 100%;
     height: 550px;
     display: flex;
@@ -552,7 +574,7 @@ background-color: rgb(240, 61, 61);
 }
 
 
-.containerMapaFerrovia > img{
+.containerMapaFerrovia>img {
     height: 100%;
     position: absolute;
 }
@@ -563,7 +585,7 @@ background-color: rgb(240, 61, 61);
 /*INICIO ESCOPO CSS HOMEPAGE MENU DE ROTAS DE TRENS*/
 
 
-.containerVerRotas{
+.containerVerRotas {
     width: 100%;
     height: 35px;
     background-color: #F58430;
@@ -572,7 +594,7 @@ background-color: rgb(240, 61, 61);
     z-index: 10;
 }
 
-.containerVerRotas > .boxRotas{
+.containerVerRotas>.boxRotas {
     margin: auto;
     margin-top: 15px;
     width: 80%;
@@ -585,7 +607,7 @@ background-color: rgb(240, 61, 61);
     border-color: rgba(0, 0, 0, 0);
 }
 
-.boxRotas > p{
+.boxRotas>p {
     margin: 0;
     padding: 0;
     font-weight: 900px;
@@ -593,20 +615,22 @@ background-color: rgb(240, 61, 61);
     margin-left: 10px;
 }
 
-.colorRota1{
+.colorRota1 {
     background-color: blue;
     width: 70px;
     height: 30px;
     margin: 10px;
 }
-.colorRota2{
+
+.colorRota2 {
     background-color: green;
     width: 70px;
     height: 30px;
     margin: 10px;
 
 }
-.colorRota3{
+
+.colorRota3 {
     background-color: rgb(255, 30, 217);
     width: 70px;
     height: 30px;
@@ -614,7 +638,7 @@ background-color: rgb(240, 61, 61);
 }
 
 
-.grayLine{
+.grayLine {
     background-color: gray;
     width: 70%;
     height: 15px;
