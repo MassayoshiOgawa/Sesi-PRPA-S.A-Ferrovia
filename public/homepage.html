@@ -16,8 +16,8 @@
 <body>
     <header>
         <div class="flex width">
-            <div class="headerSideBox"><img src="../assets/tresbarra.png" alt="" class="headerImage" id="tresBarraInicial" onclick="barFunction()"></div>
-            <div class="headerMiddleBox"><p>Linhas Específicas</p></div>
+            <div class="headerSideBox"><img src="../assets/tresbarra.png" alt="" class="headerImage" id="tresBarraInicial" onclick="barFunction()" style="z-index: 21;"></div>
+            <div class="headerMiddleBox"><h1>GitTrens</h1></div>
             <div class="headerSideBox"><p id="horarioJS" style="font-weight: bold;"></p></div>
         </div>
     </header>
@@ -33,33 +33,28 @@
     <!--INÍCIO BARRA LATERAL-->
         <div id="barraLateral">
             <div id="tresBarraContainer">
-                <img src="../assets/tresbarra.png" id="tresBarraFinal" onclick="barFunction()">
+                <img src="" id="tresBarraFinal" onclick="barFunction()">
             </div>
             <div class="flex barraOpcoes" onclick="irParaAbaRelatorioTrens()">
-                <img src="../assets/tremICON.png" alt="">
+                <div class="barraOpcoesSideLine"></div>
                 <h2>Relatório Trens</h2>
             </div>
-            <hr>
             <div class="flex barraOpcoes" onclick="irParaAbaRelatorioRotas()">
-                <img src="../assets/localizacaoICON.png" alt=""  >
+                <div class="barraOpcoesSideLine"></div>
                 <h2>Relatório Rotas</h2>
             </div>
-            <hr>
             <div class="flex barraOpcoes" onclick="irParaAbaPerfil()">
-                <img src="../assets/userICON.png" alt="">
+                <div class="barraOpcoesSideLine"></div>
                 <h2>Perfil</h2>
             </div>
-            <hr>
             <div class="flex barraOpcoes" onclick="irParaAbaNotificacoes()">
-                <img src="../assets/alertaICON.png" alt="">
+                <div class="barraOpcoesSideLine"></div>
                 <h2>Alertas</h2>
             </div>
-            <hr>
             <div class="flex barraOpcoes" onclick="logOut()">
-                <img src="../assets/logoutIcon.jpeg" alt="">
+                <div class="barraOpcoesSideLine"></div>
                 <h2>Voltar Para login</h2>
             </div>
-            <hr>
         </div>
         <!--FIM BARRA LATERAL-->
     </main>

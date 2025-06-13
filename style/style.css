@@ -136,7 +136,7 @@ header>div {
 }
 
 .headerImage {
-    height: 50px;
+    height: 30px;
 }
 
 #barraLateral {
@@ -154,13 +154,13 @@ header>div {
 }
 
 #tresBarraContainer {
-    height: 70px;
+    height: 30px;
     width: 100%;
     margin-bottom: 70px;
 }
 
 #tresBarraFinal {
-    height: 50px;
+    height: 30px;
     margin: 10px 19px;
 }
 
@@ -184,7 +184,19 @@ header>div {
     justify-content: start;
     align-items: center;
     margin-left: 30px;
+    margin-top: 3px;
     gap: 10px;
+}
+
+.barraOpcoesSideLine{
+    background-color: black;
+    width: 6px;
+    height: 70%;
+}
+
+.barraOpcoes > h2{
+    color: white;
+  -webkit-text-stroke: 1px black;
 }
 
 .voltarICON {
@@ -298,6 +310,8 @@ header>div {
     /*Classe usada para ver a "hitbox" das divs(área)*/
     background-color: blue;
 }
+
+
 
     /*Classes do perfil*/
 .voltarICON {
@@ -508,7 +522,7 @@ header>div {
 background-color: rgb(240, 61, 61);
     height: 25px;
     width: 65px;
-        margin-top: 8px;
+    margin-top: 8px;
 
 }
 
