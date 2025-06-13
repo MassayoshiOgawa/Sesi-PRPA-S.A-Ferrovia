@@ -2,24 +2,42 @@ function print(msg) {
     console.log(msg);
 }
 
-
 /* Dois vetores que armazenam os usuarios e as senhas de forma respectiva */
 const usuarios = ["adm", "Leandro Massayoshi Ogawa", "Pedro Henrique Monteiro Oliveira", "Enzo Souza"]
 const senhas = ["adm", "abacaxi123", "javascript123", "porco321"]
 
+// Função para validar caracteres proibidos
+function possuiCaracteresInvalidos(texto) {
+   const nomeRegex = /[1234567890'"()*;]/
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const regex = /['"()*;]/; 
 
+        if (texto == nome) {
+            return nomeRegex.test(texto)
+        }
 
+        if (texto == email) {
+            return emailRegex.test(texto)
+        }
+
+        return regex.test(texto);
+}
 
 function enviarform() {
-    const frm = document.getElementById("loginForm")
+    const frm = document.getElementById("loginForm");
     const nome = frm.inNome.value.trim();
     const senha = frm.inSenha.value.trim();
-    const cadastro = parseInt(frm.inCadastro.value)
+    const cadastro = parseInt(frm.inCadastro.value);
 
-
-
-
-
+    // Valida os campos nome e senha para caracteres inválidos
+    if (possuiCaracteresInvalidos(nome)) {
+        alert("O campo Nome contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(senha)) {
+        alert("O campo Senha contém caracteres inválidos!");
+        return;
+    }
 
     if (nome.toLowerCase() !== "adm") {
         if (nome !== usuarios[cadastro]) {
@@ -29,25 +47,21 @@ function enviarform() {
             alert("Senha incorreta.");
             return;
         } else {
-            alert("Login efetuado com sucesso!")
+            alert("Login efetuado com sucesso!");
             if (!localStorage.getItem("user")) {
-                localStorage.setItem("user", nome)
+                localStorage.setItem("user", nome);
             }
-            window.location.replace("public/homepage.html")
+            window.location.replace("public/homepage.html");
         }
     } else {
-        alert("Login efetuado com sucesso!")
+        alert("Login efetuado com sucesso!");
         if (!localStorage.getItem("user")) {
-                localStorage.setItem("user", nome)
-            }
-        window.location.replace("public/homepage.html")
+            localStorage.setItem("user", nome);
+        }
+        window.location.replace("public/homepage.html");
     }
-
-
-
-
 }
 
-function abrirCadastro(){
-    window.location.replace("public/cadastro.html")
+function abrirCadastro() {
+    window.location.replace("public/cadastro.html");
 }

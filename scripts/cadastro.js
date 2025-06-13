@@ -5,43 +5,70 @@ function enviarCadastro() {
     const Csenha = form.CSenha.value.trim();
     const email = form.Email.value.trim();
     const celular = form.Celular.value.trim();
+    
+    function possuiCaracteresInvalidos(texto) {
+        const nomeRegex = /[1234567890'"()*;]/
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const regex = /['"()*;]/; 
 
-    if (nome == "") {
-        alert("Preencha todos os campos");
-        return;
-    }
-    if (senha == "") {
-        alert("Preencha todos os campos");
-        return;
-    }
-    if (Csenha == "") {
-        alert("Preencha todos os campos");
-        return;
-    }
-    if (email == "") {
-        alert("Preencha todos os campos");
-        return;
-    }
-    if (celular == "") {
-        alert("Preencha todos os campos");
-        return;
+        if (texto == nome) {
+            return nomeRegex.test(texto)
+        }
+
+        if (texto == email) {
+            return emailRegex.test(texto)
+        }
+
+        return regex.test(texto);
+        
     }
 
+    if (nome == "" || senha == "" || Csenha == "" || email == "" || celular == "") {
+        alert("Preencha todos os campos");
+        return;
+    }
 
-    if (senha.length !== 8) {
-        alert("Senha precisa de 8 caracteres")
+    if (possuiCaracteresInvalidos(nome)) {
+        alert("O campo Nome contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(senha)) {
+        alert("O campo Senha contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(Csenha)) {
+        alert("O campo Confirmar Senha contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(email)) {
+        alert("O campo Email contém caracteres inválidos!");
+        return;
+    }
+    if (possuiCaracteresInvalidos(celular)) {
+        alert("O campo Celular contém caracteres inválidos!");
+        return;
+    }
+
+    if (senha.length < 8) {
+        alert("Senha precisa de 8 caracteres");
         return;
     }
 
     if (senha !== Csenha) {
-        alert("As senhas precisam ser iguais")
+        alert("As senhas precisam ser iguais");
         return;
     }
 
-    alert("Dados Salvos!");
+    if (celular.length !== 11) {
+        alert("Insira um número de telefone válido.");
+        return;
+    }
 
-    window.location.replace("../index.html")
+
+    alert("Dados Salvos!");
+    window.location.replace("../index.html");
 }
+
 
 function voltarLogin() {
     window.location.replace("../index.html")
