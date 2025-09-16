@@ -25,11 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($dados) {
         $_SESSION["id"] = $dados["id"];
-        $_SESSION["nome_usuario"] = $dados["nome_usuario"];
-        header("Location: public/mapa.html");
+        $_SESSION["nome"] = $dados["nome_usuario"];
+        header("Location: public/homepage.html");
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
+        echo "não funciona fdp";
     }
 }
 ?>
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
         <div id="form">
-            <form id="loginForm" class="center" method="$_POST">
+            <form id="loginForm" class="center" method="POST">
                 <div class="inpput">
                     <label for="nome">Nome:</label><br>
                     <input type="text" id="inNome" name="nome" class="inputTag" required>
