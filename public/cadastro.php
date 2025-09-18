@@ -1,3 +1,27 @@
+<?php
+include 'db.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
+
+    $name = $_POST['nome'];
+    $celular = $_POST['Celular'];
+    $email = $_POST['Email'];
+    $senha = $_POST['senha'];
+    $Csenha = $_POST['CSenha'];
+
+    if($senha == $Csenha){
+
+        $sql = " INSERT INTO usuario ( nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUE ('$name','$email','$senha','$celular')";
+
+        header("Location: public/homepage.html");
+    }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -55,8 +79,7 @@
 
 
                 <button type="button" onclick="enviarCadastro()" id="cadastroButton">Cadastrar</button>
-                <br>
-                <button type="button" onclick="voltarLogin()" id="cadastroButton">Voltar</button>
+                
 
             </form>
         </div>
