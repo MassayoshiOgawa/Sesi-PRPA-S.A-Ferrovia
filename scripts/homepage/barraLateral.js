@@ -22,21 +22,21 @@ function barFunction() {
 }
 
 function irParaAbaNotificacoes() {
-    window.location.replace("../public/notificacoes.html")
+    window.location.replace("../public/notificacoes.php")
 }
 
 function irParaAbaPerfil() {
-    window.location.replace("../public/perfil.html")
+    window.location.replace("../public/perfil.php")
 }
 
 function irParaAbaRelatorioTrens(){
-    window.location.replace("../public/trens.html")
+    window.location.replace("../public/trens.php")
 }
 
 function irParaAbaRelatorioRotas(){
-    window.location.replace("../public/rotas.html")
+    window.location.replace("../public/rotas.php")
 }
 
 function logOut(){
-    window.location.replace("../index.html")
+    window.location.replace("../index.php")
 }

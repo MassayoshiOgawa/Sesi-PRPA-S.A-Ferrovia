@@ -48,5 +48,5 @@ function abrir(box){
 }
 
 function voltar(){
-    window.location.replace("../public/homepage.html")
+    window.location.replace("../public/homepage.php")
 }

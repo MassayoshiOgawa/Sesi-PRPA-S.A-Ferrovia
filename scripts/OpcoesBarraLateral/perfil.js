@@ -34,5 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function voltar(){
-    window.location.replace("../public/homepage.html")
+    window.location.replace("../public/homepage.php")
 }

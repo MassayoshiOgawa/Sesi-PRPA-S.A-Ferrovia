@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $sql = " INSERT INTO usuario ( nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUE ('$name','$email','$senha','$celular')";
 
-        header("Location: public/homepage.html");
+        header("Location: public/homepage.php");
     }
 }
 
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-                <button type="button" onclick="enviarCadastro()" id="cadastroButton">Cadastrar</button>
+                <button type="submit"  id="cadastroButton">Cadastrar</button>
                 
 
             </form>

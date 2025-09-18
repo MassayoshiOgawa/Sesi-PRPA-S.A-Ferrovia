@@ -6,7 +6,6 @@ body {
     overflow: hidden;
 }
 
-
 .cab {
     background-color: #F58430;
     width: 100%;
@@ -204,7 +203,10 @@ header>div {
     color: white;
   -webkit-text-stroke: 1px black;
 }
-
+.barraOpcoes > button{
+    background-color:#ffd79a;
+    border: 0;
+}
 .voltarICON {
     margin: 20px;
     height: 75%;
