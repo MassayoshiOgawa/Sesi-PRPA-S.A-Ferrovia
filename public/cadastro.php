@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
@@ -9,12 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
     $Csenha = $_POST['CSenha'];
-
+    
     if($senha == $Csenha){
 
-        $sql = " INSERT INTO usuario ( nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUE ('$name','$email','$senha','$celular')";
-
-        header("Location: public/homepage.php");
+        $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
+    if ($conn->query($sql) === true) {
+        header("Location: ../index.php");
+    } else {
+        echo "Erro " . $sql . '<br>' . $conn->error;
+    }
+    $conn->close();
     }
 }
 
@@ -40,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
         <div id="form">
-            <form id="formCadastro" class="center">
+            <form id="formCadastro" class="center" method="post">
                 <div class="inpput">
                     <label for="nome">Nome:</label><br>
                     <input type="text" id="Nome" name="nome" class="inputTag" required>
