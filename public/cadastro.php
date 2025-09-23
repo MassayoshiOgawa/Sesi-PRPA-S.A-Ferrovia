@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
@@ -9,12 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
     $Csenha = $_POST['CSenha'];
-
+    echo "socorro";
     if($senha == $Csenha){
 
         $sql = " INSERT INTO usuario ( nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUE ('$name','$email','$senha','$celular')";
 
-        header("Location: public/homepage.php");
+        header("Location: homepage.php");
     }
 }
 

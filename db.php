@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "root", "ferrovia_GitTrensSeg");
+$mysqli = new mysqli("localhost", "root", "root", "ferrovia_GitTrens");
 if ($mysqli->connect_errno) {
     die("Erro de conexão: " . $mysqli->connect_error);
 }
