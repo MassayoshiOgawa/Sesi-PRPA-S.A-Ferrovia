@@ -80,8 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="flex" style="flex-direction: column;">
                     <button type="submit"  class="cadastroButton">Enviar</button>
 
-                    <button type="button" onclick="abrirCadastro()" class="cadastroButton">Cadastro</button>
-                    <a href="public/cadastro.php">cadastro</a>
+                    <button type="button"  class="cadastroButton"><a href="public/cadastro.php">Cadastrar-se</a></button>
+                    
                 </div>
             </form>
         </div>

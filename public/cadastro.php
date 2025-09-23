@@ -13,14 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if($senha == $Csenha){
 
         $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
-    if ($mysqli->query($sql) === true) {
+    }else if ($conn->query($sql) === true) {
         header("Location: ../index.php");
     } else {
         echo "Erro " . $sql . '<br>' . $conn->error;
     }
     $conn->close();
-    }
 }
+
 
 
 ?>
