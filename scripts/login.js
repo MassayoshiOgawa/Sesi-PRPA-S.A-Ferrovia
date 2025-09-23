@@ -61,5 +61,5 @@ function enviarform() {
 }
 
 function abrirCadastro() {
-    window.location.replace("../public/cadastro.php");
+    window.location.replace("public/cadastro.php");
 }
