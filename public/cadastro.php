@@ -10,16 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senha = $_POST['senha'];
     $Csenha = $_POST['CSenha'];
     
-    if($senha == $Csenha){
+if($senha == $Csenha){
 
         $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
-    }else if ($conn->query($sql) === true) {
+    if ($mysqli->query($sql) === true) {
         header("Location: ../index.php");
     } else {
         echo "Erro " . $sql . '<br>' . $conn->error;
     }
     $conn->close();
+    }
 }
+
 
 
 
