@@ -1,7 +1,12 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "root", "ferrovia_GitTrens");
-if ($mysqli->connect_errno) {
-    die("Erro de conexão: " . $mysqli->connect_error);
-}
 
-session_start();
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "ferrovia_GitTrens";
+
+$mysqli = new mysqli($servername, $username, $password, $dbname);
+
+if ($mysqli->connect_error) {
+    die("Conexao falhou: " . $mysqli->connect_error);
+}

@@ -81,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button type="submit"  class="cadastroButton">Enviar</button>
 
                     <button type="button" onclick="abrirCadastro()" class="cadastroButton">Cadastro</button>
+                    <a href="public/cadastro.php">cadastro</a>
                 </div>
             </form>
         </div>
