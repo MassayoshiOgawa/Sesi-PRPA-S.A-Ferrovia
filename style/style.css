@@ -67,6 +67,11 @@ body {
     margin-top: 5px;
 }
 
+.cadastroButton  a{
+    color: black;
+    text-decoration: none;
+}
+
 #recuperarSenhaBut {
     background-color: #f2a42d;
     margin-left: 4%;
