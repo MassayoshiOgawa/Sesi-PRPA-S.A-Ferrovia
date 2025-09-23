@@ -1,1 +1,2 @@
 # Sesi-PRPA-S.A-Ferrovia
+Esse aplicativo possue as funcionalidades de se cadastrar e de logar com um sistema integrado com banco de dadso MySQL.Támbem apresenta funções para navegar entre páinas com informações sobre as rotas e os trens da ferrovia.O banco de dados inclui nfrmações sbre os usuarios, trens, rotas e dos sensores.
