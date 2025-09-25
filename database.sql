@@ -6,11 +6,10 @@ CREATE TABLE usuario(
     nome_usuario varchar(255) not null,
     email_usuario varchar(255) not null,
     senha_usuario varchar(255) not null,
+    role_usuario  ENUM('admin', 'user') not null default 'user',
     telefone_usuario varchar(11),
-    cargo_usuario varchar(50),
-    nascimento_usuario date,
-    adm boolean,
-    maquinista boolean
+    nascimento_usuario date
+
 );
 
 CREATE TABLE trem(
