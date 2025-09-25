@@ -40,3 +40,7 @@ function irParaAbaRelatorioRotas(){
 function logOut(){
     window.location.replace("../index.php")
 }
+
+function usuarios(){
+    window.location.replace("../public/crud/cadastro.php")
+}
