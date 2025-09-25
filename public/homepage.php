@@ -40,63 +40,44 @@
                 <img src="" id="tresBarraFinal" onclick="barFunction()">
             </div>
 
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $troca = $_POST['pagina'] ?? '';
 
-                switch ($troca) {
-                    case '1':
-                        header("Location: trens.php");
-                        break;
-                    case '2':
-                        header("Location: rotas.php");
-                        break;
-                    case '3':
-                        header("Location: perfil.php");
-                        break;
-                    case '4':
-                        header("Location: notificacoes.php");
-                        break;
-                    case '5':
-                        header("Location: ../index.php");
-                        break;
-                }
-            }
-            ?>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="irParaAbaRelatorioTrens()">
+                    <h2>Relatório Trens</h2>
+                </button>
+            </div>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="irParaAbaRelatorioRotas()">
+                    <h2>Relatório Rotas</h2>
+                </button>
+            </div>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="irParaAbaPerfil()">
+                    <h2>Perfil</h2>
+                </button>
+            </div>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="irParaAbaNotificacoes()">
+                    <h2>Alertas</h2>
+                </button>
+            </div>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="logOut()">
+                    <h2>Voltar Para login</h2>
+                </button>
+            </div>
 
-            <form action="" method="POST">
-                <div class="flex barraOpcoes">
-                    <div class="barraOpcoesSideLine"></div>
-                    <button type="submit" name="pagina" value="1">
-                        <h2>Relatório Trens</h2>
-                    </button>
-                </div>
-                <div class="flex barraOpcoes">
-                    <div class="barraOpcoesSideLine"></div>
-                    <button type="submit" name="pagina" value="2">
-                        <h2>Relatório Rotas</h2>
-                    </button>
-                </div>
-                <div class="flex barraOpcoes">
-                    <div class="barraOpcoesSideLine"></div>
-                    <button type="submit" name="pagina" value="3">
-                        <h2>Perfil</h2>
-                    </button>
-                </div>
-                <div class="flex barraOpcoes">
-                    <div class="barraOpcoesSideLine"></div>
-                    <button type="submit" name="pagina" value="4">
-                        <h2>Alertas</h2>
-                    </button>
-                </div>
-                <div class="flex barraOpcoes">
-                    <div class="barraOpcoesSideLine"></div>
-                    <button type="submit" name="pagina" value="5">
-                        <h2>Voltar Para login</h2>
-                    </button>
-                </div>
-
-            </form>
+            <div class="flex barraOpcoes">
+                <div class="barraOpcoesSideLine"></div>
+                <button onclick="usuarios()">
+                    <h2>Gerenciar usuários</h2>
+                </button>
+            </div>
         </div>
         <!--FIM BARRA LATERAL-->
     </main>

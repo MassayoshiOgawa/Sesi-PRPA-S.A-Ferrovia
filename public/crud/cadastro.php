@@ -1,33 +1,29 @@
 <?php
-include '../db.php';
+include '../../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
+
 
     $name = $_POST['nome'];
     $celular = $_POST['Celular'];
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
-    $Csenha = $_POST['CSenha'];
-    
-if($senha == $Csenha){
+    $nascimento = $_POST['nascimento'];
+    $Administrador = $_POST['Administrador'];
+
+
+    if ($senha == $Csenha) {
 
         $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
-    if ($mysqli->query($sql) === true) {
-        header("Location: ../index.php");
-    } else {
-        echo "Erro " . $sql . '<br>' . $conn->error;
-    }
-    $conn->close();
+        if ($mysqli->query($sql) === true) {
+            header("Location: ../index.php");
+        } else {
+            echo "Erro " . $sql . '<br>' . $conn->error;
+        }
+        $conn->close();
     }
 }
-
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -55,7 +51,7 @@ if($senha == $Csenha){
                 <br>
 
                 <div class="inpput">
-                    <label for="Celular">Celular:</label><br>
+                    <label for="Celular">Telefone:</label><br>
                     <input type="number" id="Celular" name="Celular" class="inputTag" required>
                     <hr>
                 </div>
@@ -76,20 +72,29 @@ if($senha == $Csenha){
                 <br>
 
                 <div class="inpput">
-                    <label for="CSenha">Confirmar Senha:</label><br>
-                    <input type="password" id="CSenha" name="CSenha" class="inputTag" required>
+                    <label for="nascimento"> Data de nascimento:</label><br>
+                    <input type="password" id="nascimento" name="nascimento" class="inputTag" required>
+                    <hr>
+                </div>
+
+                <div class="inpput">
+                    <label for="Cargo">Cargo:</label><br>
+                    <input type="password" id="Cargo" name="Cargo" class="inputTag" required>
+                    <hr>
+                </div>
+
+                <div class="inpput">
+                    <label for="Administrador">Administrador:</label><br>
+                    <input type="password" id="Administrador" name="Administrador" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
 
-
-
-                <button type="submit"  id="cadastroButton">Cadastrar</button>
-                
+                <button type="submit" id="cadastroButton">Cadastrar</button>
 
             </form>
         </div>
-      
+
 
     </main>
     <footer>
