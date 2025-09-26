@@ -6,6 +6,7 @@ CREATE TABLE usuario(
     nome_usuario varchar(255) not null,
     email_usuario varchar(255) not null,
     senha_usuario varchar(255) not null,
+    role_usuario  ENUM('admin', 'user') not null default 'user',
     telefone_usuario varchar(11),
     cargo_usuario ENUM('Administrador','Maquinista','Usuario'),
     nascimento_usuario date
