@@ -9,19 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
     $nascimento = $_POST['nascimento'];
-    $Administrador = $_POST['Administrador'];
+    $cargo = $_POST['Cargo'];
 
 
-    if ($senha == $Csenha) {
 
-        $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
-        if ($mysqli->query($sql) === true) {
-            header("Location: ../index.php");
-        } else {
-            echo "Erro " . $sql . '<br>' . $conn->error;
-        }
-        $conn->close();
-    }
+    $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular','$cargo','$nascimento')";
 }
 ?>
 <!DOCTYPE html>
@@ -30,16 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../scripts/cadastro.js" defer></script>
-    <link rel="stylesheet" href="../style/style.css">
+    <script src="../../scripts/cadastro.js" defer></script>
+    <link rel="stylesheet" href="../../style/style.css">
     <title>Cadastro</title>
 </head>
 
 <body>
+    <header style="background-color: rgba(255, 0, 0, 0);">
+        <a href="../homepage.php">
+            <img src="../../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar()">
+        </a>
+    </header>
     <main>
-        <div class="cab">
-            <img class="logo" src="../assets/logo.png" alt="">
-        </div>
+
 
         <div id="form">
             <form id="formCadastro" class="center" method="post">
@@ -73,22 +68,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="inpput">
                     <label for="nascimento"> Data de nascimento:</label><br>
-                    <input type="password" id="nascimento" name="nascimento" class="inputTag" required>
-                    <hr>
-                </div>
-
-                <div class="inpput">
-                    <label for="Cargo">Cargo:</label><br>
-                    <input type="password" id="Cargo" name="Cargo" class="inputTag" required>
-                    <hr>
-                </div>
-
-                <div class="inpput">
-                    <label for="Administrador">Administrador:</label><br>
-                    <input type="password" id="Administrador" name="Administrador" class="inputTag" required>
+                    <input type="date" id="nascimento" name="nascimento" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
+
+                <div class="inpput">
+                    <label for="Cargo">Cargo:</label><br>
+                    <select name="Cargo" id="">
+                        <option value=""></option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Maquinista">Maquinista</option>
+                        <option value="Usuario">Usuario</option>
+                    </select>
+                    <hr>
+                </div>
+                <br>
+
 
                 <button type="submit" id="cadastroButton">Cadastrar</button>
 

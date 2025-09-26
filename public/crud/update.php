@@ -6,11 +6,15 @@ $id = $_GET['id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $nome = $_POST['name'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $nascimnto = $_POST['nascimento'];
+    $name = $_POST['nome'];
+    $celular = $_POST['Celular'];
+    $email = $_POST['Email'];
+    $senha = $_POST['senha'];
+    $nascimento = $_POST['nascimento'];
+    $cargo = $_POST['Cargo'];
 
-    $sql = "UPDATE autores SET nome_autor ='$nome',nacionalidade_autor ='$nacionalidade',ano_nascimento_autor = '$nascimnto' WHERE id=$id";
+
+    $sql = "UPDATE usuario SET id, nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento' WHERE id=$id";
 
     if ($mysqli->query($sql) === true) {
         echo "Registro atualizado com sucesso.
@@ -20,44 +24,93 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
     }
     $mysqli->close();
-    exit(); 
+    exit();
 }
 
 $sql = "SELECT * FROM usuario WHERE id=$id";
-$result = $mysqli -> query($sql);
-$row = $result -> fetch_assoc();
-
+$result = $mysqli->query($sql);
+$row = $result->fetch_assoc();
 
 ?>
 
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>update</title>
+    <link rel="stylesheet" href="../../style/style.css">
+    <title>Cadastro</title>
 </head>
 
 <body>
+    <header style="background-color: rgba(255, 0, 0, 0);">
+        <a href="../homepage.php">
+            <img src="../../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar()">
+        </a>
+    </header>
 
-    <form method="POST" action="update_autores.php?id=<?php echo $row['id'];?>">
+    <main>
+        <div id="form">
+            <form id="formCadastro" class="center" method="post">
+                <div class="inpput">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="Nome" name="nome" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" value="<?php echo $row['name'];?>" required>
+                <div class="inpput">
+                    <label for="Celular">Telefone:</label><br>
+                    <input type="number" id="Celular" name="Celular" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
 
-        <label for="nacionalidade">nacionalidade:</label>
-        <input type="text" name="nacionalidade" value="<?php echo $row['nacionalidade'];?>" required>
+                <div class="inpput">
+                    <label for="Email">Email:</label><br>
+                    <input type="text" id="Email" name="Email" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
 
-         <label for="nascimento">Ano de nascimento:</label>
-        <input type="number" name="nascimento" value="<?php echo $row['nascimento'];?>" required>
+                <div class="inpput">
+                    <label for="senha">Senha:</label><br>
+                    <input type="password" id="Senha" name="senha" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
 
-        <input type="submit" value="Atualizar">
+                <div class="inpput">
+                    <label for="nascimento"> Data de nascimento:</label><br>
+                    <input type="date" id="nascimento" name="nascimento" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
 
-    </form>
+                <div class="inpput">
+                    <label for="Cargo">Cargo:</label><br>
+                    <select name="Cargo" id="">
+                        <option value=""></option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Maquinista">Maquinista</option>
+                        <option value="Usuario">Usuario</option>
+                    </select>
+                    <hr>
+                </div>
+                <br>
 
-    <a href="read_autores.php">Ver registros.</a>
 
+                <button type="submit" id="cadastroButton">Cadastrar</button>
+
+            </form>
+        </div>
+
+
+    </main>
+    <footer>
+        <p>Todos os direitos reservados a equipe GitTrens ©</p>
+    </footer>
 </body>
 
 </html>

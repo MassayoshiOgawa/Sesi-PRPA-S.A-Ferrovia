@@ -7,10 +7,8 @@ CREATE TABLE usuario(
     email_usuario varchar(255) not null,
     senha_usuario varchar(255) not null,
     telefone_usuario varchar(11),
-    cargo_usuario varchar(50),
-    nascimento_usuario date,
-    adm boolean,
-    maquinista boolean
+    cargo_usuario ENUM('Administrador','Maquinista','Usuario'),
+    nascimento_usuario date
 );
 
 CREATE TABLE trem(
@@ -58,5 +56,6 @@ CREATE TABLE sensor_data(
  id_sensor_data int primary key auto_increment,
  valor int not null,
  data_hora timestamp,
- fk_id_sensor
+ fk_id_sensor int not null,
+ FOREIGN KEY (fk_id_sensor)REFERENCES sensor(id_sensor)
 );
