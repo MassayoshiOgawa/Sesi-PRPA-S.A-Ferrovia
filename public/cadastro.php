@@ -2,31 +2,36 @@
 include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-
     $name = $_POST['nome'];
     $celular = $_POST['Celular'];
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
     $Csenha = $_POST['CSenha'];
-    $role = $_POST['role'];
-    
-if($senha == $Csenha){
 
-        $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular')";
-    if ($mysqli->query($sql) === true) {
-        header("Location: ../index.php");
+    if ($senha === $Csenha) {
+        $hash = password_hash($senha, PASSWORD_DEFAULT);
+
+        $stmt = $mysqli->prepare("INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (?, ?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("ssss", $name, $email, $hash, $celular);
+            if ($stmt->execute()) {
+                header("Location: ../index.php");
+                exit();
+            } else {
+                echo "Erro ao executar: " . $stmt->error;
+            }
+            $stmt->close();
+        } else {
+            echo "Erro na preparação da query: " . $mysqli->error;
+        }
     } else {
-        echo "Erro " . $sql . '<br>' . $conn->error;
+        echo "As senhas não coincidem!";
     }
-    $conn->close();
-    }
+
+    $mysqli->close();
 }
-
-
-
-
 ?>
+
 
 
 <!DOCTYPE html>

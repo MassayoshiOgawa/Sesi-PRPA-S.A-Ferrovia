@@ -4,11 +4,12 @@ USE ferrovia_GitTrens;
 CREATE TABLE usuario(
     id int primary key auto_increment,
     nome_usuario varchar(255) not null,
-    email_usuario varchar(255) not null,
+    email_usuario varchar(255) not null unique,
     senha_usuario varchar(255) not null,
     telefone_usuario varchar(11),
     cargo_usuario ENUM('Administrador','Maquinista','Usuario'),
-    nascimento_usuario date
+    nascimento_usuario date,
+    foto_perfil varchar(255) default 'default.jpg'
 );
 
 CREATE TABLE trem(
