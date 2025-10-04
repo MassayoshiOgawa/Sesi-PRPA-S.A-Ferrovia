@@ -1,39 +1,40 @@
 <?php
-// 1) Conexão
 include 'db.php';
+session_start();
 
-// 2) Logout
+// Logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: login.php");
-    exit;
+    header("Location: index.php");
+    exit();
 }
 
-// 3) Login
+// Login
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"] ?? "";
     $senha = $_POST["senha"] ?? "";
-    $cadastro = $_POST["cadastro"] ?? "";
 
-    $stmt = $mysqli->prepare("SELECT id, nome_usuario, senha_usuario FROM usuario WHERE nome_usuario=? AND senha_usuario=?");
-    $stmt->bind_param("ss", $nome, $senha);
+    // Busca o usuário pelo nome
+    $stmt = $mysqli->prepare("SELECT id, nome_usuario, senha_usuario FROM usuario WHERE nome_usuario=?");
+    $stmt->bind_param("s", $nome);
     $stmt->execute();
     $result = $stmt->get_result();
     $dados = $result->fetch_assoc();
     $stmt->close();
 
-    if ($dados) {
+    // Verifica se o usuário existe e se a senha confere
+    if ($dados && password_verify($senha, $dados["senha_usuario"])) {
         $_SESSION["id"] = $dados["id"];
         $_SESSION["nome"] = $dados["nome_usuario"];
         header("Location: public/homepage.php");
-        exit;
+        exit();
     } else {
         $msg = "Usuário ou senha incorretos!";
-        
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -75,7 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <hr>
                 </div>
                 <br>
+                <?php if($msg !== ""):?>
+                <p><?php echo $msg;?></p>
                 <a href="public/senha.html">Esqueceu sua senha?</a>
+                <?php else:?>
+                <a href="public/senha.html">Esqueceu sua senha?</a>
+                <?php endif;?>
                 <br>
                 <div class="flex" style="flex-direction: column;">
                     <button type="submit"  class="cadastroButton">Enviar</button>
