@@ -1,55 +1,47 @@
 <?php
-include '../db.php';
+include '../../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+
     $name = $_POST['nome'];
     $celular = $_POST['Celular'];
     $email = $_POST['Email'];
     $senha = $_POST['senha'];
-    $Csenha = $_POST['CSenha'];
+    $nascimento = $_POST['nascimento'];
+    $cargo = $_POST['Cargo'];
 
-    if ($senha === $Csenha) {
-        $hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        $stmt = $mysqli->prepare("INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario) VALUES (?, ?, ?, ?)");
-        if ($stmt) {
-            $stmt->bind_param("ssss", $name, $email, $hash, $celular);
-            if ($stmt->execute()) {
-                header("Location: ../index.php");
-                exit();
-            } else {
-                echo "Erro ao executar: " . $stmt->error;
-            }
-            $stmt->close();
+
+    $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento')";
+
+     if ($mysqli->query($sql) === true) {
+            echo "Novo registro criado com sucesso.";
         } else {
-            echo "Erro na preparação da query: " . $mysqli->error;
+            echo "Erro " . $sql . '<br>' . $mysqli->error;
         }
-    } else {
-        echo "As senhas não coincidem!";
-    }
-
-    $mysqli->close();
+        $mysqli->close();
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../scripts/cadastro.js" defer></script>
-    <link rel="stylesheet" href="../style/style.css">
+    <script src="../../scripts/cadastro.js" defer></script>
+    <link rel="stylesheet" href="../../style/style.css">
     <title>Cadastro</title>
 </head>
 
 <body>
+    <header style="background-color: rgba(255, 0, 0, 0);">
+        <a href="../homepage.php">
+            <img src="../../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar()">
+        </a>
+    </header>
     <main>
-        <div class="cab">
-            <img class="logo" src="../assets/logo.png" alt="">
-        </div>
+
 
         <div id="form">
             <form id="formCadastro" class="center" method="post">
@@ -61,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <br>
 
                 <div class="inpput">
-                    <label for="Celular">Celular:</label><br>
+                    <label for="Celular">Telefone:</label><br>
                     <input type="number" id="Celular" name="Celular" class="inputTag" required>
                     <hr>
                 </div>
@@ -82,20 +74,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <br>
 
                 <div class="inpput">
-                    <label for="CSenha">Confirmar Senha:</label><br>
-                    <input type="password" id="CSenha" name="CSenha" class="inputTag" required>
+                    <label for="nascimento"> Data de nascimento:</label><br>
+                    <input type="date" id="nascimento" name="nascimento" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
+
+                <div class="inpput">
+                    <label for="Cargo">Cargo:</label><br>
+                    <select name="Cargo" id="">
+                        <option value=""></option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Maquinista">Maquinista</option>
+                        <option value="Usuario">Usuario</option>
+                    </select>
                     <hr>
                 </div>
                 <br>
 
 
-
-                <button type="submit"  id="cadastroButton">Cadastrar</button>
-                
+                <button type="submit" id="cadastroButton">Cadastrar</button>
 
             </form>
         </div>
-      
+
 
     </main>
     <footer>

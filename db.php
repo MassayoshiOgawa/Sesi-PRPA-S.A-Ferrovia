@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "ferrovia_GitTrens";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
