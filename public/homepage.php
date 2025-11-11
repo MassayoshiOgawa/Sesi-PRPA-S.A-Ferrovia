@@ -40,44 +40,39 @@
                 <img src="" id="tresBarraFinal" onclick="barFunction()">
             </div>
 
-
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="irParaAbaRelatorioTrens()">
-                    <h2>Relatório Trens</h2>
-                </button>
-            </div>
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="irParaAbaRelatorioRotas()">
+            <div class='opcoesContainer'>
+                <div class="opcoesBox" onclick="irParaAbaRelatorioTrens()">
+                    <div class="barraOpcoesSideLine"></div>
+                    <h2 >Relatório Trens</h2>
+                    <div></div>
+                </div>
+                <div class="opcoesBox" onclick="irParaAbaRelatorioRotas()">
+                    <div class="barraOpcoesSideLine"></div>
                     <h2>Relatório Rotas</h2>
-                </button>
-            </div>
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="irParaAbaPerfil()">
+                    <div></div>
+                </div>
+                <div class="opcoesBox" onclick="irParaAbaPerfil()">
+                    <div class="barraOpcoesSideLine"></div>
                     <h2>Perfil</h2>
-                </button>
-            </div>
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="irParaAbaNotificacoes()">
+                    <div></div>
+                </div>
+                <div class="opcoesBox" onclick="irParaAbaNotificacoes()">
+                    <div class="barraOpcoesSideLine"></div>
                     <h2>Alertas</h2>
-                </button>
-            </div>
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="logOut()">
+                    <div></div>
+                </div>
+                <div class="opcoesBox" onclick="logOut()">
+                    <div class="barraOpcoesSideLine"></div>
                     <h2>Voltar Para login</h2>
-                </button>
+                    <div></div>
+                </div>
+                <div class="opcoesBox" onclick="usuarios()">
+                    <div class="barraOpcoesSideLine"></div>
+                    <h2>Gerenciar usuários</h2>
+                    <div></div>
+                </div>
             </div>
 
-            <div class="flex barraOpcoes">
-                <div class="barraOpcoesSideLine"></div>
-                <button onclick="usuarios()">
-                    <h2>Gerenciar usuários</h2>
-                </button>
-            </div>
         </div>
         <!--FIM BARRA LATERAL-->
     </main>
