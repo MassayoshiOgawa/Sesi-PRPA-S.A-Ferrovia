@@ -46,6 +46,7 @@
                     <h2 >Relatório Trens</h2>
                     <div></div>
                 </div>
+                
                 <div class="opcoesBox" onclick="irParaAbaRelatorioRotas()">
                     <div class="barraOpcoesSideLine"></div>
                     <h2>Relatório Rotas</h2>
