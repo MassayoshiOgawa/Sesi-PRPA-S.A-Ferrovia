@@ -13,7 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-    $sql = " INSERT INTO usuario (id, nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES (DEFAULT, '$name','$email','$senha','$celular','$cargo','$nascimento')";
+    $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento')";
+
+     if ($mysqli->query($sql) === true) {
+            echo "Novo registro criado com sucesso.";
+        } else {
+            echo "Erro " . $sql . '<br>' . $mysqli->error;
+        }
+        $mysqli->close();
 }
 ?>
 <!DOCTYPE html>

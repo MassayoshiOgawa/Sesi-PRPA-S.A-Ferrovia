@@ -4,6 +4,12 @@ include '../../db.php';
 
 $id = $_GET['id'];
 
+$sql = "SELECT * FROM usuario where id=$id";
+
+$result = $mysqli->query($sql);
+
+$row = $result->fetch_assoc();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $name = $_POST['nome'];
@@ -14,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cargo = $_POST['Cargo'];
 
 
-    $sql = "UPDATE usuario SET id, nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento' WHERE id=$id";
+    $sql = "UPDATE usuario SET nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento' WHERE id=$id";
 
     if ($mysqli->query($sql) === true) {
         echo "Registro atualizado com sucesso.
-        <a href='read_autores.php'>Ver registros.</a>
+        <a href='read.php'>Ver registros.</a>
         ";
     } else {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
@@ -55,43 +61,43 @@ $row = $result->fetch_assoc();
             <form id="formCadastro" class="center" method="post">
                 <div class="inpput">
                     <label for="nome">Nome:</label><br>
-                    <input type="text" id="Nome" name="nome" class="inputTag" required>
+                    <input type="text" id="Nome" name="nome" class="inputTag" required VALUE="<?php echo "{$row['nome_usuario']}" ?>"> 
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
                     <label for="Celular">Telefone:</label><br>
-                    <input type="number" id="Celular" name="Celular" class="inputTag" required>
+                    <input type="number" id="Celular" name="Celular" class="inputTag" required VALUE="<?php echo "{$row['telefone_usuario']}" ?>">
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
                     <label for="Email">Email:</label><br>
-                    <input type="text" id="Email" name="Email" class="inputTag" required>
+                    <input type="text" id="Email" name="Email" class="inputTag" required VALUE="<?php echo "{$row['email_usuario']}" ?>">
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
                     <label for="senha">Senha:</label><br>
-                    <input type="password" id="Senha" name="senha" class="inputTag" required>
+                    <input type="password" id="Senha" name="senha" class="inputTag" required VALUE="<?php echo "{$row['senha_usuario']}" ?>">
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
                     <label for="nascimento"> Data de nascimento:</label><br>
-                    <input type="date" id="nascimento" name="nascimento" class="inputTag" required>
+                    <input type="date" id="nascimento" name="nascimento" class="inputTag" required VALUE="<?php echo "{$row['nascimento_usuario']}" ?>">
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
                     <label for="Cargo">Cargo:</label><br>
-                    <select name="Cargo" id="">
-                        <option value=""></option>
+                    <select name="Cargo" id=""  VALUE="<?php echo "{$row['cargo_usuario']}" ?>">
+                        
                         <option value="Administrador">Administrador</option>
                         <option value="Maquinista">Maquinista</option>
                         <option value="Usuario">Usuario</option>
