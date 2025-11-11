@@ -1,3 +1,15 @@
+<?php
+// perfil.php
+$nome = $_POST['nome'] ?? '';
+$cep = $_POST['cep'] ?? '';
+$rua = $_POST['rua'] ?? '';
+$bairro = $_POST['bairro'] ?? '';
+$cidade = $_POST['cidade'] ?? '';
+$estado = $_POST['estado'] ?? '';
+$ddd = $_POST['ddd'] ?? '';
+$estado_ddd = $_POST['estado_ddd'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <script src="../scripts/OpcoesBarraLateral/perfil.js"></script>
@@ -24,7 +36,7 @@
             <label class="relatarLabel">Email:</label>
             <input type="text" id="inGrau" class="relatarInput" required>
             <label class="relatarLabel">Data de Nascimento:</label>
-            <input type="text" id="inHorario" class="relatarInput" required>
+            <input type="text" id="inHorario" class="relatarInput" required> 
            <br>
             <button type= "submit" class=" botaoEnviarPerfil" > Enviar</button>
         </form>

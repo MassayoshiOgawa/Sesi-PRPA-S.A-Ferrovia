@@ -10,6 +10,11 @@ CREATE TABLE usuario(
     cargo_usuario ENUM('Administrador','Maquinista','Usuario'),
     nascimento_usuario date,
     foto_perfil varchar(255) default 'default.jpg'
+    cep VARCHAR(9),
+    rua VARCHAR(100),
+    bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    estado VARCHAR(2)
 );
 
 CREATE TABLE trem(

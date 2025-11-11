@@ -25,6 +25,41 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="../../scripts/cadastro.js" defer></script>
     <link rel="stylesheet" href="../../style/style.css">
     <title>Cadastro</title>
+
+<script>
+        async function buscarEndereco() {
+            const cep = document.getElementById('cep').value.replace(/\D/g, '');
+            if (cep.length !== 8) {
+                alert("Digite um CEP válido (8 dígitos).");
+                return;
+            }
+            try {
+                const res = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+                if (!res.ok) throw new Error("CEP não encontrado");
+                const data = await res.json();
+                document.getElementById('rua').value = data.street || '';
+                document.getElementById('bairro').value = data.neighborhood || '';
+                document.getElementById('cidade').value = data.city || '';
+                document.getElementById('estado').value = data.state || '';
+            } catch (err) {
+                alert("Erro ao buscar CEP: " + err.message);
+            }
+        }
+
+        async function buscarDDD() {
+            const ddd = document.getElementById('ddd').value.replace(/\D/g, '');
+            if (ddd.length < 2) return;
+            try {
+                const res = await fetch(`https://brasilapi.com.br/api/ddd/v1/${ddd}`);
+                if (!res.ok) throw new Error("DDD não encontrado");
+                const data = await res.json();
+                document.getElementById('estado_ddd').value = data.state;
+            } catch (err) {
+                alert("Erro ao buscar DDD: " + err.message);
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -84,6 +119,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <hr>
                 </div>
                 <br>
+
+                <div class="inpput">
+                    <label for="nome">CEP:</label><br>
+                    <input type="number" id="cep" name="cep" class="inputTag" required>
+                    <hr>
+                </div>
+                <br>
+
 
 
                 <button type="submit" id="cadastroButton">Cadastrar</button>

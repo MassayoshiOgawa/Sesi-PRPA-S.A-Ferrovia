@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $mysqli->close();
+
+
+
 }
 ?>
 
@@ -43,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="../scripts/cadastro.js" defer></script>
     <link rel="stylesheet" href="../style/style.css">
     <title>Cadastro</title>
+
+ 
+
 </head>
 
 <body>
@@ -88,6 +94,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
                 <br>
 
+            <div class="inpput">
+    <label for="cep">CEP:</label><br>
+    <input type="text" id="cep" name="cep" class="inputTag" required maxlength="8" onblur="buscarCEP()">
+    <hr>
+</div>
+<br>
 
 
                 <button type="submit"  id="cadastroButton">Cadastrar</button>
