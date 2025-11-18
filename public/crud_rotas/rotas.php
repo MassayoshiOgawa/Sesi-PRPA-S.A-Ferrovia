@@ -59,20 +59,38 @@
                 </div>
             </div>
 
-            <div class="BoxStatus" onclick="abrir(this)">
-                <div class="caixaTriangulo">
-                    <h1>Rota 4</h1>
-                    <div class="Rotas_IdBlock4"></div>
-                    <img src="../assets/trianguloICON.png" alt="">
+            
+             <?php 
+        include '../../db.php';
+        $id = 1;
+
+        $sql = "SELECT * FROM trem ";
+
+        $result = $mysqli->query($sql);
+        
+        while ($row = $result->fetch_assoc()) {
+            
+            
+            echo "
+          <div class='BoxStatus' onclick='abrir(this)'>
+                <div class='caixaTriangulo'>
+                    <h1>Rota {$row['id_rota']}</h1>
+                    <div class='Rotas_IdBlock4'></div>
+                    <img src='../assets/trianguloICON.png' 'alt='>
                 </div>
                 <div>
-                    <p>Desempenho:</p>
-                    <p>Dados de consumo:</p>
-                    <p>Tempo de funcionamento diario:</p>
-                    <p>Modelo:</p>
+                   
+                    <p>intensidade_movimento:{$row['intensidade_movimento']}</p>
+                    <p>Tempo de funcionamento diario:{$row['horario_funcionamento']}</p>
+                    <p>cor:{$row['cor_rota']}</p>
                 </div>
+                <a href='update_rota.php?id={$row['id_trem']}'>Editar<a>
+                <a href='delete_rota.php?id={$row['id_trem']}'>Excluir<a>
             </div>
-
+            ";
+           
+        }
+        ?>
     </main>
 </body>
 
