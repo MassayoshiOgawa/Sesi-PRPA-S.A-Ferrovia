@@ -42,5 +42,5 @@ function logOut(){
 }
 
 function usuarios(){
-    window.location.replace("../public/crud/read.php")
+    window.location.replace("../public/crud_usuarios/read_usuarios.php")
 }

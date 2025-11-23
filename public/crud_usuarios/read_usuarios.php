@@ -64,7 +64,7 @@
 
         $mysqli->close();
 
-        echo "<a href='cadastro.php'>Inserir novo Registro</a>";
+        echo "<a href='cadastro_usuarios.php'>Inserir novo Registro</a>";
         ?>
     </main>
 </body>

@@ -1,40 +1,41 @@
 <?php
-include 'db.php';
-session_start();
+    include "db.php";
 
-// Logout
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header("Location: index.php");
-    exit();
-}
+    session_start();
 
-// Login
-$msg = "";
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"] ?? "";
-    $senha = $_POST["senha"] ?? "";
-
-    // Busca o usuário pelo nome
-    $stmt = $mysqli->prepare("SELECT id, nome_usuario, senha_usuario FROM usuario WHERE nome_usuario=?");
-    $stmt->bind_param("s", $nome);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $dados = $result->fetch_assoc();
-    $stmt->close();
-
-    // Verifica se o usuário existe e se a senha confere
-    if ($dados && password_verify($senha, $dados["senha_usuario"])) {
-        $_SESSION["id"] = $dados["id"];
-        $_SESSION["nome"] = $dados["nome_usuario"];
-        header("Location: public/homepage.php");
-        exit();
-    } else {
-        $msg = "Usuário ou senha incorretos!";
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+        exit;
     }
-}
-?>
 
+    $msg = "";
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $user = $_POST["nome"] ?? "";
+        $pass = $_POST["senha"] ?? "";
+
+        $stmt = $mysqli->prepare("SELECT id, nome_usuario, senha_usuario FROM usuario WHERE nome_usuario=? AND senha_usuario=?");
+        $stmt->bind_param("ss", $user, $pass);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $dados = $result->fetch_assoc();
+                if($dados && password_verify($pass, $dados['senha'])){
+            return $dados;
+        }
+        $stmt->close();
+
+        if ($dados) {
+            $_SESSION['id'] = $dados['id'];
+            $_SESSION["nome_usuario"] = $dados["nome_usuario"];
+            $_SESSION["senha_usuario"] = $dados["senha_usuario"];
+           
+            header("Location:public/homepage.php");
+            exit;
+        } else {
+            $msg = "Usuário ou senha incorretos!";
+        }
+    }
+?>
 
 
 <!DOCTYPE html>
@@ -86,8 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="flex" style="flex-direction: column;">
                     <button type="submit"  class="cadastroButton">Enviar</button>
 
-                    <button type="button"  class="cadastroButton"><a href="public/cadastro.php">Cadastrar-se</a></button>
-                    
+
                 </div>
             </form>
         </div>
