@@ -253,7 +253,7 @@ h2{
     margin-top: 20px;
     height: 450px;
     gap: 10px;
-    overflow: hidden;
+
     overflow-y: scroll;
     max-width: 400px;
 }

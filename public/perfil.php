@@ -25,22 +25,31 @@ $estado_ddd = $_POST['estado_ddd'] ?? '';
     <header style="background-color: rgba(250, 235, 215, 0);">
         <img class="voltarICON" src="../assets/setaICON.png" alt="" onclick="voltar()">
     </header>
+    <?php 
+        include '../db.php';
 
+        $sql = "SELECT * FROM usuario";
 
-    <img class="PerfilIcon" src="../assets/userICON.png" alt="">
-     <form id="escreverNotificacao_form" class="relatarContainer">
-            <label class="relatarLabel">Nome:</label>
-            <input type="text" id="inNome" class="relatarInput" required>
-            <label class="relatarLabel">Telefone:</label>
-            <input type="text" id="inDesc" class="relatarInput" required>
-            <label class="relatarLabel">Email:</label>
-            <input type="text" id="inGrau" class="relatarInput" required>
-            <label class="relatarLabel">Data de Nascimento:</label>
-            <input type="text" id="inHorario" class="relatarInput" required> 
-           <br>
-            <button type= "submit" class=" botaoEnviarPerfil" > Enviar</button>
-        </form>
+        $result = $mysqli->query($sql);
+        $row = $result->fetch_assoc();
 
+        echo"
+        <img class='PerfilIcon' src='../assets/userICON.png' alt=''>
+        <div  class='relatarContainer'>
+        
+            <p class='relatarInput'> Email: {$row['email_usuario']}</p><br>
+            <p class='relatarInput'> Senha: {$row['senha_usuario']}</p><br>
+            <p class='relatarInput'> Telefone: {$row['telefone_usuario']}</p><br>
+            <p class='relatarInput'> Cargo: {$row['cargo_usuario']}</p><br>
+            <p class='relatarInput'> Data de Nascimento: {$row['nascimento_usuario']}</p><br>
+            <p class='relatarInput'> Nome: {$row['nome_usuario']}</p><br>
+            <br>
+            <button type= 'submit' class='botaoEnviarPerfil' > Enviar</button>
+    
+        </div>
+        ";
+
+    ?>
 </body>
 
 </html>

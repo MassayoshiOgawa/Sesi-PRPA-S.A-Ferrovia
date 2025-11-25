@@ -30,11 +30,11 @@ function irParaAbaPerfil() {
 }
 
 function irParaAbaRelatorioTrens(){
-    window.location.replace("../public/trens.php")
+    window.location.replace("../public/crud_trens/trens.php")
 }
 
 function irParaAbaRelatorioRotas(){
-    window.location.replace("../public/rotas.php")
+    window.location.replace("../public/crud_rotas/rotas.php")
 }
 
 function logOut(){

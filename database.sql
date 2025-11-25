@@ -6,10 +6,10 @@ CREATE TABLE usuario(
     nome_usuario varchar(255) not null,
     email_usuario varchar(255) not null unique,
     senha_usuario varchar(255) not null,
-    telefone_usuario varchar(11),
-    cargo_usuario ENUM('Administrador','Maquinista','Usuario'),
-    nascimento_usuario date,
-    foto_perfil varchar(255) default 'default.jpg'
+    telefone_usuario varchar(11) not null,
+    cargo_usuario ENUM('Administrador','Maquinista','Usuario') not null,
+    nascimento_usuario date not null,
+    foto_perfil varchar(255) default 'default.jpg',
     cep VARCHAR(9),
     rua VARCHAR(100),
     bairro VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE usuario(
 );
 
 CREATE TABLE trem(
-    id_trem int primary key auto_increment,
+    id_trem int primary key auto_increment not null,
     desempenho int not null,
     consumo_energia int not null,
     eficiencia varchar(10) not null,
@@ -43,12 +43,13 @@ CREATE TABLE trem_na_rota(
 
 CREATE TABLE notificacao(
     id_notificacao int primary key auto_increment,
-    fk_trem int not null,
+    assunto varchar(45) not null,
     descricao varchar(500) not null,
-    resolvido boolean not null,
+    estado ENUM('a fazer','fazendo','feito') not null,
     horario time not null,
-    nivel_problema varchar(15) not null,
-    foreign key (fk_trem) references trem(id_trem)
+    data_notificacao date not null,
+    prioridade ENUM('baixa','média','alta') not null
+
 );
 
 CREATE TABLE sensor(
@@ -65,3 +66,5 @@ CREATE TABLE sensor_data(
  fk_id_sensor int not null,
  FOREIGN KEY (fk_id_sensor)REFERENCES sensor(id_sensor)
 );
+
+INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');

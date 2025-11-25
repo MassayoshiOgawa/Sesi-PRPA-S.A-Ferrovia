@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotas</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <script src="../scripts/OpcoesBarraLateral/trens.js" defer></script>
+    <link rel="stylesheet" href="../../style/style.css">
+    <script src="../../scripts/OpcoesBarraLateral/trens.js" defer></script>
 </head>
 
 <body style="overflow-y: scroll;">
     <header style="background-color: rgba(0, 0, 255, 0);">
-        <img src="../assets/seta.png" alt="" class="voltarICON" onclick="voltar()">
+        <img src="../../assets/seta.png" alt="" class="voltarICON" onclick="voltar()">
     </header>
     <main>
         <div class="ContainerTren">
@@ -18,7 +18,7 @@
                 <div class="caixaTriangulo">
                     <h1>Rota 1</h1>
                     <div class="Rotas_IdBlock1"></div>
-                    <img src="../assets/trianguloICON.png" alt="">
+                   <img src="../../assets/trianguloICON.png" alt="">
                 </div>
                 <div>
                     <p>Intensidade de movimento:</p>
@@ -33,7 +33,7 @@
                 <div class="caixaTriangulo">
                     <h1>Rota 2</h1>
                     <div class="Rotas_IdBlock2"></div>
-                    <img src="../assets/trianguloICON.png" alt="">
+                    <img src="../../assets/trianguloICON.png" alt="">
                 </div>
                 <div>
                     <p>Desempenho:</p>
@@ -49,7 +49,7 @@
                 <div class="caixaTriangulo">
                     <h1>Rota 3</h1>
                     <div class="Rotas_IdBlock3"></div>
-                    <img src="../assets/trianguloICON.png" alt="">
+                    <img src="../../assets/trianguloICON.png" alt="">
                 </div>
                 <div>
                     <p>Desempenho:</p>
