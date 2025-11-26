@@ -40,7 +40,7 @@
                             </div>
                             <h1>Trem {$row['id_trem']}</h1>
                         </div>
-                        <img src='../../assets/trianguloICON.png' alt=''>
+                        <img src='../../assets/trianguloICON.png' alt='' class='triangulo'>
                     </div>
                         <div class='infoTren'>
                         <p>modelo: {$row['modelo']}</p>

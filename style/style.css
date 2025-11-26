@@ -540,11 +540,6 @@ h2{
 
 }
 
-.caixaTriangulo img {
-    height: 10%;
-    width: 10%;
-}
-
 
 .Rotas_IdBlock1 {
     background-color: blue;
@@ -592,8 +587,8 @@ h2{
 
 
 .motoristaImg {
-    height: 80%;
-    width: 50%;
+    height: 100px;
+    width: 100px;
     margin-left: 20%;
 }
 
@@ -684,3 +679,8 @@ h2{
 }
 
 /*FIM ESCOPO CSS HOMEPAGE MENU DE ROTAS DE TRENS*/
+
+.triangulo{
+    width: 30px;
+    height: 30px;
+}

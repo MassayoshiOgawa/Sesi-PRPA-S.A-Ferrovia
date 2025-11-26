@@ -81,9 +81,9 @@
                 <br>
                 <?php if($msg !== ""):?>
                 <p><?php echo $msg;?></p>
-                <a href="public/senha.html">Esqueceu sua senha?</a>
+                <a href="public/senha.php">Esqueceu sua senha?</a>
                 <?php else:?>
-                <a href="public/senha.html">Esqueceu sua senha?</a>
+                <a href="public/senha.php">Esqueceu sua senha?</a>
                 <?php endif;?>
                 <br>
                 <div class="flex" style="flex-direction: column;">
