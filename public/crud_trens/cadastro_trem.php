@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="inpput">
                     <label for="capacidade_carga">Capacidade de Carga (toneladas):</label><br>
-                    <input type="number" step="0.01" id="capacidade_carga" name="capacidade_carga" class="inputTag" required>
+                    <input type="number" id="capacidade_carga" name="capacidade_carga" class="inputTag" required>
                     <hr>
                 </div><br>
 
@@ -83,10 +83,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="number" id="ano_trem" name="ano_trem" class="inputTag" required>
                     <hr>
                 </div><br>
-
+                
                 <div class="inpput">
                     <label for="maquinista">ID do Maquinista:</label><br>
-                    <input type="number" id="maquinista" name="maquinista" class="inputTag" required>
+                    <select name="maquinista" id="maquinista" class="inputTag"  required>
+                        <option value="nulo">...</option>
+                        <?php
+                            include '../../db.php';
+                            $sql = "SELECT id , nome_usuario FROM usuario WHERE  cargo_usuario = 'Maquinista'";
+
+                            $result = $mysqli->query($sql);
+
+                            while ($row = $result->fetch_assoc()) {
+                                echo"<option value='{$row['id']}'>{$row['nome_usuario']}</option>";
+                            }
+                        ?>
+                    </select>
                     <hr>
                 </div><br>
 

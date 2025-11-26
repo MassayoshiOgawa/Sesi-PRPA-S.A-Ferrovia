@@ -40,12 +40,12 @@
                             </div>
                             <img src='../../assets/trianguloICON.png' alt=''>
                         </div>
-                            <p>modelo: {$row['nome_rota']}</p>
-                            <p>capacidade de carga: {$row['estação_origem']}</p>
-                            <p>empresa proprietaria: {$row['estação_destino']}</p>
-                            <p>status trem: {$row['distancia']}</p>
-                            <p>consumo de combustível: {$row['intensidade_movimento']}</p>
-                            <p>ano trem: {$row['horario_funcionamento']}</p>
+                            <p>Nome da rota: {$row['nome_rota']}</p>
+                            <p>Estação de origem: {$row['estação_origem']}</p>
+                            <p>Estação de destino: {$row['estação_destino']}</p>
+                            <p>Distãncia rota: {$row['distancia']}</p>
+                            <p>Intensidade de movimento: {$row['intensidade_movimento']}</p>
+                            <p>Horário de funcionamento: {$row['horario_funcionamento']}</p>
                             <a href='update_trem.php?id={$row['id_rota']}'>Editar<a>
                         </div>
 

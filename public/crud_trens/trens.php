@@ -21,8 +21,8 @@
         include '../../db.php';
         $id = 1;
 
-        $sql = "SELECT * FROM trem ";
-
+        $sql = "SELECT trem.*, usuario.nome_usuario, usuario.telefone_usuario FROM `trem` INNER JOIN usuario ON usuario.id = fk_maquinista";
+         
         $result = $mysqli->query($sql);
 
         while ($row = $result->fetch_assoc()) {
@@ -54,8 +54,8 @@
                     <div class='InfoMotorista'>
                         <div>
                             <h3>Maquinista</h3>
-                            <p>Nome:</p>
-                            <p>Telefone:</p>
+                            <p>Nome:  {$row['nome_usuario']}</p>
+                            <p>Telefone: {$row['telefone_usuario']}</p>
                         </div>
                         <div>
                             <img src='../../assets/userICON.png' alt='' class='motoristaImg'>
