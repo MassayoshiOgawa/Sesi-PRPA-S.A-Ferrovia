@@ -13,84 +13,51 @@
         <img src="../../assets/seta.png" alt="" class="voltarICON" onclick="voltar()">
     </header>
     <main>
-        <div class="ContainerTren">
-            <div class="BoxStatus" onclick="abrir(this)">
-                <div class="caixaTriangulo">
-                    <h1>Rota 1</h1>
-                    <div class="Rotas_IdBlock1"></div>
-                   <img src="../../assets/trianguloICON.png" alt="">
-                </div>
-                <div>
-                    <p>Intensidade de movimento:</p>
-                    <p>Trens ativos:</p>
-                    <p>Horário de funcionamento:</p>
-                    <p>Modelo:</p>
-                </div>
-            </div>
-
-
-            <div class="BoxStatus" onclick="abrir(this)">
-                <div class="caixaTriangulo">
-                    <h1>Rota 2</h1>
-                    <div class="Rotas_IdBlock2"></div>
-                    <img src="../../assets/trianguloICON.png" alt="">
-                </div>
-                <div>
-                    <p>Desempenho:</p>
-                    <p>Dados de consumo:</p>
-                    <p>Tempo de funcionamento diario:</p>
-                    <p>Modelo:</p>
-                </div>
-            </div>
-
-
-
-            <div class="BoxStatus" onclick="abrir(this)">
-                <div class="caixaTriangulo">
-                    <h1>Rota 3</h1>
-                    <div class="Rotas_IdBlock3"></div>
-                    <img src="../../assets/trianguloICON.png" alt="">
-                </div>
-                <div>
-                    <p>Desempenho:</p>
-                    <p>Dados de consumo:</p>
-                    <p>Tempo de funcionamento diario:</p>
-                    <p>Modelo:</p>
-                </div>
-            </div>
-
+        
             
-             <?php 
+              
+        <?php 
         include '../../db.php';
         $id = 1;
 
-        $sql = "SELECT * FROM trem ";
+        $sql = "SELECT * FROM rota ";
 
         $result = $mysqli->query($sql);
         
         while ($row = $result->fetch_assoc()) {
-            
-            
+ 
             echo "
-          <div class='BoxStatus' onclick='abrir(this)'>
-                <div class='caixaTriangulo'>
-                    <h1>Rota {$row['id_rota']}</h1>
-                    <div class='Rotas_IdBlock4'></div>
-                    <img src='../assets/trianguloICON.png' 'alt='>
+
+                <div class='ContainerTren'>
+                    <div class='BoxStatus' onclick='abrir(this)'>
+                        <div class='caixaTriangulo'>
+                            <div class='flex2'>
+                                <div class='bloco'>
+                                    <br>
+                                    
+                                </div>
+                                <h1>Rota {$row['id_rota']}</h1>
+                            </div>
+                            <img src='../../assets/trianguloICON.png' alt=''>
+                        </div>
+                            <p>modelo: {$row['nome_rota']}</p>
+                            <p>capacidade de carga: {$row['estação_origem']}</p>
+                            <p>empresa proprietaria: {$row['estação_destino']}</p>
+                            <p>status trem: {$row['distancia']}</p>
+                            <p>consumo de combustível: {$row['intensidade_movimento']}</p>
+                            <p>ano trem: {$row['horario_funcionamento']}</p>
+                            <a href='update_trem.php?id={$row['id_rota']}'>Editar<a>
+                        </div>
+
+                    </div>
+                
                 </div>
-                <div>
-                   
-                    <p>intensidade_movimento:{$row['intensidade_movimento']}</p>
-                    <p>Tempo de funcionamento diario:{$row['horario_funcionamento']}</p>
-                    <p>cor:{$row['cor_rota']}</p>
-                </div>
-                <a href='update_rota.php?id={$row['id_trem']}'>Editar<a>
-                <a href='delete_rota.php?id={$row['id_trem']}'>Excluir<a>
-            </div>
-            ";
            
+            ";
+
         }
         ?>
+        
     </main>
 </body>
 

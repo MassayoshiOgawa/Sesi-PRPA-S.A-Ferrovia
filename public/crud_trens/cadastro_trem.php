@@ -4,19 +4,22 @@ include '../../db.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
-    $desempenho = $_POST['desempenho'];
-    $consumo = $_POST['consumo'];
-    $eficiencia = $_POST['eficiencia'];
-    $maquinista = $_POST['maquinista'];
+    $modelo              = $_POST['modelo'];
+    $capacidadeCarga    = $_POST['capacidade_carga'];
+    $empresaProprietaria = $_POST['empresa_proprietaria'];
+    $statusTrem         = $_POST['status_trem'];
+    $consumoCombustivel = $_POST['consumo_combustivel'];
+    $anoTrem            = $_POST['ano_trem'];
+    $maquinista          = $_POST['maquinista'];
 
-    $sql = " INSERT INTO trem (desempenho, consumo_energia, eficiencia, fk_maquinista) VALUES ('$desempenho','$consumo','$eficiencia','$maquinista')";
+    $sql = "INSERT INTO trem (modelo, capacidade_carga, empresa_proprietaria, status_trem, consumo_combustível, ano_trem, fk_maquinista) VALUES ('$modelo', '$capacidadeCarga', '$empresaProprietaria', '$statusTrem', '$consumoCombustivel', '$anoTrem', '$maquinista')";
 
-     if ($mysqli->query($sql) === true) {
-            echo "Novo registro criado com sucesso.";
-        } else {
-            echo "Erro " . $sql . '<br>' . $mysqli->error;
-        }
-        $mysqli->close();
+    if ($mysqli->query($sql) === true) {
+        echo "Novo registro criado com sucesso.";
+    } else {
+        echo "Erro " . $sql . '<br>' . $mysqli->error;
+    }
+    $mysqli->close();
 }
 ?>
 <!DOCTYPE html>
@@ -42,32 +45,51 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form id="formCadastro" class="center" method="post">
 
                 <div class="inpput">
-                    <label for="desempenho">Desempenho:</label><br>
-                    <input type="number" id="desempenho" name="desempenho" class="inputTag" required>
+                    <label for="modelo">Modelo:</label><br>
+                    <input type="text" id="modelo" name="modelo" class="inputTag" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
 
                 <div class="inpput">
-                    <label for="consumo">Consumo de energia:</label><br>
-                    <input type="number" id="consumo" name="consumo" class="inputTag" required>
+                    <label for="capacidade_carga">Capacidade de Carga (toneladas):</label><br>
+                    <input type="number" step="0.01" id="capacidade_carga" name="capacidade_carga" class="inputTag" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
 
                 <div class="inpput">
-                    <label for="eficiencia">Eficiencia:</label><br>
-                    <input type="number" id="eficiencia" name="eficiencia" class="inputTag" required>
+                    <label for="empresa_proprietaria">Empresa Proprietária:</label><br>
+                    <input type="text" id="empresa_proprietaria" name="empresa_proprietaria" class="inputTag" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
 
                 <div class="inpput">
-                    <label for="maquinista">Maquinista:</label><br>
+                    <label for="status_trem">Status do Trem:</label><br>
+                    <select id="status_trem" name="status_trem" class="inputTag" required>
+                        <option value="ativo">Ativo</option>
+                        <option value="suspenso">Suspenso</option>
+                        <option value="manutenção">Manutenção</option>
+                    </select>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="consumo_combustivel">Consumo de Combustível:</label><br>
+                    <input type="text" id="consumo_combustivel" name="consumo_combustivel" class="inputTag" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="ano_trem">Ano do Trem:</label><br>
+                    <input type="number" id="ano_trem" name="ano_trem" class="inputTag" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="maquinista">ID do Maquinista:</label><br>
                     <input type="number" id="maquinista" name="maquinista" class="inputTag" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
+
 
                 <button type="submit" id="cadastroButton">Cadastrar</button>
 
