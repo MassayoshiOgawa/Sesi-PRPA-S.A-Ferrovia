@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data  = $_POST['data'];
     $prioridade  = $_POST['prioridade'];
     
-    $sql = "INSERT INTO notificacao (descricao, estado, horario, data_notificacao, prioridade) VALUES ('$descricao', '$estado', '$horario', '$data', '$prioridade')";
+    $sql = "INSERT INTO notificacao (assunto, descricao, estado, horario, data_notificacao, prioridade) VALUES ('$assunto','$descricao', '$estado', '$horario', '$data', '$prioridade')";
 
     if ($mysqli->query($sql) === true) {
         echo "Novo registro criado com sucesso.";

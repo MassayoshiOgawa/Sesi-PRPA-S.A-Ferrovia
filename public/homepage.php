@@ -67,11 +67,20 @@
                     <h2>Voltar Para login</h2>
                     <div></div>
                 </div>
-                <div class="opcoesBox" onclick="usuarios()">
-                    <div class="barraOpcoesSideLine"></div>
-                    <h2>Gerenciar usuários</h2>
-                    <div></div>
-                </div>
+                <?php
+                    include "../db.php";
+                    session_start();
+
+                    
+                    if ($_SESSION['cargo_usuario'] == "Administrador") {
+                        echo"
+                        <div class='opcoesBox' onclick='usuarios()'>
+                            <div class='barraOpcoesSideLine'></div>
+                            <h2>Gerenciar usuários</h2>
+                            <div></div>
+                        </div>";
+                    }
+                ?>
             </div>
 
         </div>

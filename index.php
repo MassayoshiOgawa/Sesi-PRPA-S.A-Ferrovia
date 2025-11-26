@@ -1,6 +1,6 @@
 <?php
     include "db.php";
-
+    $idUser = "indefinido";
     session_start();
 
     if (isset($_GET['logout'])) {
@@ -14,7 +14,7 @@
         $user = $_POST["nome"] ?? "";
         $pass = $_POST["senha"] ?? "";
 
-        $stmt = $mysqli->prepare("SELECT id, nome_usuario, senha_usuario FROM usuario WHERE nome_usuario=? AND senha_usuario=?");
+        $stmt = $mysqli->prepare("SELECT * FROM usuario WHERE nome_usuario=? AND senha_usuario=?");
         $stmt->bind_param("ss", $user, $pass);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -28,8 +28,10 @@
             $_SESSION['id'] = $dados['id'];
             $_SESSION["nome_usuario"] = $dados["nome_usuario"];
             $_SESSION["senha_usuario"] = $dados["senha_usuario"];
-           
-            header("Location:public/homepage.php");
+          $_SESSION['telefone_usuario']  = $dados['telefone_usuario'];
+        $_SESSION['cargo_usuario']     = $dados['cargo_usuario'];
+        $_SESSION['nascimento_usuario']= $dados['nascimento_usuario'];
+           header("Location:public/homepage.php");
             exit;
         } else {
             $msg = "Usuário ou senha incorretos!";

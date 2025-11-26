@@ -1,15 +1,3 @@
-<?php
-// perfil.php
-$nome = $_POST['nome'] ?? '';
-$cep = $_POST['cep'] ?? '';
-$rua = $_POST['rua'] ?? '';
-$bairro = $_POST['bairro'] ?? '';
-$cidade = $_POST['cidade'] ?? '';
-$estado = $_POST['estado'] ?? '';
-$ddd = $_POST['ddd'] ?? '';
-$estado_ddd = $_POST['estado_ddd'] ?? '';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <script src="../scripts/OpcoesBarraLateral/perfil.js"></script>
@@ -27,8 +15,10 @@ $estado_ddd = $_POST['estado_ddd'] ?? '';
     </header>
     <?php 
         include '../db.php';
+        session_start();
+        $idUser =  $_SESSION['id'];
 
-        $sql = "SELECT * FROM usuario";
+        $sql = "SELECT * FROM usuario WHERE id =  $idUser";
 
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();

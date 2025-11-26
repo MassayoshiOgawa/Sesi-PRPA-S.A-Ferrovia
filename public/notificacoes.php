@@ -12,6 +12,7 @@
         <img src="../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar()">
     </header>
     <main>
+        <div class='containerNotificacoes' id='containerNotificacoes'>
        <?php
        include '../db.php';
 
@@ -23,7 +24,6 @@
             while ($row = $result->fetch_assoc()) {
 
                  echo "
-                 <div class='containerNotificacoes' id='containerNotificacoes'>
                      <div class='notificacoes' id='mainNoticia' onclick='deletar(this)'>
                          <div class='flex' style='height: 100%;'>
                              <div class='notiLeft'>
@@ -54,16 +54,16 @@
                              </div>
                          </div>
                      </div>
-                 </div>
-                 ";
-
-            }
-
-        } else {
-            echo "Nenhum registro encontrado.";
-        }
-
-        ?>
+                     ";
+                     
+                    }
+                    
+                } else {
+                    echo "Nenhum registro encontrado.";
+                }
+                
+                ?>
+                </div>
 
             <h1 onclick="relatar()" id="botaoRelatar">Relatar ocorrido</h1>
         <p><!--NÃO APAGA ESSE PARAGRAFO--></p>
