@@ -19,18 +19,25 @@ CREATE TABLE usuario(
 
 CREATE TABLE trem(
     id_trem int primary key auto_increment not null,
-    desempenho int not null,
-    consumo_energia int not null,
-    eficiencia varchar(10) not null,
+    modelo varchar(45),
+    capacidade_carga float,
+    empresa_proprietaria varchar(45),
+    status_trem ENUM('ativo', 'suspenso', 'manutenção'),
+    consumo_combustível varchar(45),
+    ano_trem int,
     fk_maquinista int,
     foreign key (fk_maquinista) references usuario(id)
 );
 
 CREATE TABLE rota(
     id_rota int primary key auto_increment,
-    intensidade_movimento varchar(40),
-    horario_funcionamento varchar(50),
-    cor_rota varchar(9) 
+    nome_rota varchar(45),
+    estação_origem varchar(45),
+    estação_destino varchar(45),
+    distancia float,
+    intensidade_movimento ENUM('alta', 'baixa', 'média'),
+    horario_funcionamento varchar(50)
+    
 );
 
 CREATE TABLE trem_na_rota(
@@ -67,4 +74,18 @@ CREATE TABLE sensor_data(
  FOREIGN KEY (fk_id_sensor)REFERENCES sensor(id_sensor)
 );
 
-INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
+INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) 
+VALUES 
+('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
+
+INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
+VALUES 
+('rota1', 'saida1', 'estação2', 130.5, 'alta', '05:00 - 23:00');
+
+INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
+VALUES 
+('rota2', 'saida1', 'estação3', 95.2, 'média', '06:00 - 22:00');
+
+INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
+VALUES 
+('rota3', 'saida2', 'estação1', 521.7, 'baixa', '07:00 - 21:00');
