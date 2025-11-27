@@ -63,27 +63,21 @@
                 }
 
                 echo "<tr>
-                        <td>{$row['id']}</td>
-                        <td>{$row['nome_usuario']}</td>
-                        <td>{$row['email_usuario']}</td>
-                        <td>{$row['telefone_usuario']}</td>
-                        <td>{$row['cargo_usuario']}</td>
-                        <td>{$row['nascimento_usuario']}</td>
-                        
-                        
-                        <td>$cep</td>
+                <td> {$row['id']} </td>
+                <td> {$row['nome_usuario']} </td>
+                <td> {$row['email_usuario']} </td>
+                <td> {$row['senha_usuario']} </td>
+                <td> {$row['telefone_usuario']} </td>
+                <td> {$row['cargo_usuario']} </td>
+                <td> {$row['nascimento_usuario']} </td>
 
                         <td>
-                            $logradouro <br>
-                            $bairro <br>
-                            $cidade - $estado
+                    <a href='update.php?id={$row['id']}'>Editar<a>
+                    <a href='delete.php?id={$row['id']}'>Excluir<a>
+                
                         </td>
-
-                        <td>
-                            <a href='update_usuarios.php?id={$row['id']}'>Editar</a>
-                            <a href='delete_usuarios.php?id={$row['id']}'>Excluir</a>
-                        </td>
-                    </tr>";
+              </tr>   
+        ";
             }
 
             echo "</table>";
