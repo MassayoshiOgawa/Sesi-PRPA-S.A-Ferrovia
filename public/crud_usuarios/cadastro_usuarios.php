@@ -11,6 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nascimento = $_POST['nascimento'];
     $cargo = $_POST['Cargo'];
 
+    $email = $_POST['Email'];
+
+$checkEmail = "SELECT * FROM usuario WHERE email_usuario = '$email'";
+$resultEmail = $mysqli->query($checkEmail);
+
+if ($resultEmail->num_rows > 0) {
+    die("Erro: Este e-mail já está cadastrado.");
+}
+
 
 
     $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento')";
@@ -129,10 +138,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="inpput">
                     <label for="nome">CEP:</label><br>
-                    <input type="number" id="cep" name="cep" class="inputTag" required>
+                    <input type="number" id="cep" name="cep" class="inputTag" required onblur="buscarEndereco()">
+
                     <hr>
                 </div>
                 <br>
+
+                <div class="inpput">
+    <label for="rua">Rua:</label><br>
+    <input type="text" id="rua" name="rua" class="inputTag" readonly>
+    <hr>
+</div>
+
+<br>
+
+<div class="inpput">
+    <label for="bairro">Bairro:</label><br>
+    <input type="text" id="bairro" name="bairro" class="inputTag" readonly>
+    <hr>
+</div>
+
+<br>
+
+
+<div class="inpput">
+    <label for="cidade">Cidade:</label><br>
+    <input type="text" id="cidade" name="cidade" class="inputTag" readonly>
+    <hr>
+</div>
+
+<br>
+
+
+<div class="inpput">
+    <label for="estado">Estado:</label><br>
+    <input type="text" id="estado" name="estado" class="inputTag" readonly>
+    <hr>
+</div>
+
+<br>
 
 
 

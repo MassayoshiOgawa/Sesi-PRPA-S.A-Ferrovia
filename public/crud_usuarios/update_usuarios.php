@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cargo = $_POST['Cargo'];
 
 
-    $sql = "UPDATE usuario SET nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento' WHERE id=$id";
+    $sql = "UPDATE usuario SET nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento', WHERE id=$id";
 
     if ($mysqli->query($sql) === true) {
         echo "Registro atualizado com sucesso.

@@ -1,91 +1,99 @@
+DROP DATABASE IF EXISTS ferrovia_GitTrens;
 CREATE DATABASE ferrovia_GitTrens;
 USE ferrovia_GitTrens;
 
+
 CREATE TABLE usuario(
-    id int primary key auto_increment,
-    nome_usuario varchar(255) not null,
-    email_usuario varchar(255) not null unique,
-    senha_usuario varchar(255) not null,
-    telefone_usuario varchar(11) not null,
-    cargo_usuario ENUM('Administrador','Maquinista','Usuario') not null,
-    nascimento_usuario date not null,
-    foto_perfil varchar(255) default 'default.jpg',
-    cep VARCHAR(9),
-    rua VARCHAR(100),
-    bairro VARCHAR(100),
-    cidade VARCHAR(100),
-    estado VARCHAR(2)
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome_usuario VARCHAR(255) NOT NULL,
+    email_usuario VARCHAR(255) NOT NULL UNIQUE,
+    senha_usuario VARCHAR(255) NOT NULL,
+    telefone_usuario VARCHAR(20) NOT NULL,
+    cargo_usuario ENUM('Administrador','Maquinista','Usuario') NOT NULL,
+    nascimento_usuario DATE NOT NULL,
+    foto_perfil VARCHAR(255) DEFAULT 'default.jpg',
+    cep_usuario VARCHAR(8),
+    rua_usuario VARCHAR(100),
+    bairro_usuario VARCHAR(100),
+    cidade_usuario VARCHAR(100),
+    estado_usuario VARCHAR(2)
 );
+
+INSERT INTO usuario 
+(nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) 
+VALUES 
+('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
+
+ INSERT INTO usuario
+(nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario,
+ cep_usuario, rua_usuario, bairro_usuario, cidade_usuario, estado_usuario)
+VALUES
+('$nome', '$email', '$senha', '$telefone', '$cargo', '$nascimento',
+ '$cep_limpo', '$logradouro', '$bairro', '$cidade', '$estado');
+
+
+
 
 CREATE TABLE trem(
-    id_trem int primary key auto_increment not null,
-    modelo varchar(45),
-    capacidade_carga float,
-    empresa_proprietaria varchar(45),
-    status_trem ENUM('ativo', 'suspenso', 'manutenção'),
-    consumo_combustível varchar(45),
-    ano_trem int,
-    fk_maquinista int,
-    foreign key (fk_maquinista) references usuario(id)
+    id_trem INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    modelo VARCHAR(45),
+    capacidade_carga FLOAT,
+    empresa_proprietaria VARCHAR(45),
+    status_trem ENUM('ativo', 'suspenso', 'manutencao'),
+    consumo_combustivel VARCHAR(45),
+    ano_trem INT,
+    fk_maquinista INT,
+    FOREIGN KEY (fk_maquinista) REFERENCES usuario(id_usuario)
 );
+
 
 CREATE TABLE rota(
-    id_rota int primary key auto_increment,
-    nome_rota varchar(45),
-    estação_origem varchar(45),
-    estação_destino varchar(45),
-    distancia float,
-    intensidade_movimento ENUM('alta', 'baixa', 'média'),
-    horario_funcionamento varchar(50)
-    
+    id_rota INT PRIMARY KEY AUTO_INCREMENT,
+    nome_rota VARCHAR(45),
+    estacao_origem VARCHAR(45),
+    estacao_destino VARCHAR(45),
+    distancia FLOAT,
+    intensidade_movimento ENUM('alta', 'baixa', 'media'),
+    horario_funcionamento VARCHAR(50)
 );
 
+INSERT INTO rota (nome_rota, estacao_origem, estacao_destino, distancia, intensidade_movimento, horario_funcionamento)
+VALUES 
+('rota1', 'saida1', 'estacao2', 130.5, 'alta', '05:00 - 23:00'),
+('rota2', 'saida1', 'estacao3', 95.2, 'media', '06:00 - 22:00'),
+('rota3', 'saida2', 'estacao1', 521.7, 'baixa', '07:00 - 21:00');
+
+
 CREATE TABLE trem_na_rota(
-    fk_rota int,
-    fk_trem int,
-    foreign key (fk_rota) references rota(id_rota),
-    foreign key (fk_trem) references trem(id_trem)
+    fk_rota INT,
+    fk_trem INT,
+    FOREIGN KEY (fk_rota) REFERENCES rota(id_rota),
+    FOREIGN KEY (fk_trem) REFERENCES trem(id_trem)
 );
 
 
 CREATE TABLE notificacao(
-    id_notificacao int primary key auto_increment,
-    assunto varchar(45) not null,
-    descricao varchar(500) not null,
-    estado ENUM('a fazer','fazendo','feito') not null,
-    horario time not null,
-    data_notificacao date not null,
-    prioridade ENUM('baixa','média','alta') not null
-
+    id_notificacao INT PRIMARY KEY AUTO_INCREMENT,
+    assunto VARCHAR(45) NOT NULL,
+    descricao VARCHAR(500) NOT NULL,
+    estado ENUM('a fazer','fazendo','feito') NOT NULL,
+    horario TIME NOT NULL,
+    data_notificacao DATE NOT NULL,
+    prioridade ENUM('baixa','media','alta') NOT NULL
 );
+
 
 CREATE TABLE sensor(
-    id_sensor int primary key auto_increment,
-    descricao varchar (500) not null,
-    sensor_status varchar (200) not null,
-    fk_sensor_data int
+    id_sensor INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR (500) NOT NULL,
+    sensor_status VARCHAR (200) NOT NULL
 );
+
 
 CREATE TABLE sensor_data(
- id_sensor_data int primary key auto_increment,
- valor int not null,
- data_hora timestamp,
- fk_id_sensor int not null,
- FOREIGN KEY (fk_id_sensor)REFERENCES sensor(id_sensor)
+    id_sensor_data INT PRIMARY KEY AUTO_INCREMENT,
+    valor INT NOT NULL,
+    data_hora TIMESTAMP,
+    fk_id_sensor INT NOT NULL,
+    FOREIGN KEY (fk_id_sensor) REFERENCES sensor(id_sensor)
 );
-
-INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) 
-VALUES 
-('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
-
-INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
-VALUES 
-('rota1', 'saida1', 'estação2', 130.5, 'alta', '05:00 - 23:00');
-
-INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
-VALUES 
-('rota2', 'saida1', 'estação3', 95.2, 'média', '06:00 - 22:00');
-
-INSERT INTO rota (nome_rota, estação_origem, estação_destino, distancia, intensidade_movimento, horario_funcionamento)
-VALUES 
-('rota3', 'saida2', 'estação1', 521.7, 'baixa', '07:00 - 21:00');
