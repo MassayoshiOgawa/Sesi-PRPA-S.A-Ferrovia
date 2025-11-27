@@ -13,19 +13,20 @@
         <img src="../../assets/seta.png" alt="" class="voltarICON" onclick="voltar()">
     </header>
     <main>
-        
-            
-              
-        <?php 
+
+
+
+        <?php
         include '../../db.php';
         $id = 1;
+        session_start();
 
         $sql = "SELECT * FROM rota ";
 
         $result = $mysqli->query($sql);
-        
+
         while ($row = $result->fetch_assoc()) {
- 
+
             echo "
 
                 <div class='ContainerTren'>
@@ -46,20 +47,21 @@
                             <p>Distãncia rota: {$row['distancia']}</p>
                             <p>Intensidade de movimento: {$row['intensidade_movimento']}</p>
                             <p>Horário de funcionamento: {$row['horario_funcionamento']}</p>
-                            <div class='EditarButton'>   
-                            <a href='update_rota.php?id={$row['id_rota']}'>Editar<a>
-                            </div>
-                        </div>
+                            ";
+            if ($_SESSION['cargo_usuario'] == "Administrador") {
+                echo "    <div class='EditarButton'>   
+                                <a href='update_rota.php?id={$row['id_rota']}'>Editar<a>
+                                </div>";
+            }
+
+            echo "        </div>
 
                     </div>
                 
-                </div>
-           
-            ";
-
+                </div>";
         }
         ?>
-        
+
     </main>
 </body>
 

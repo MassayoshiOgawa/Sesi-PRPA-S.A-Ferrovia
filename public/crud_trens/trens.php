@@ -24,7 +24,7 @@
         <?php
         include '../../db.php';
         $id = 1;
-
+        session_start();
         $sql = "SELECT trem.*, usuario.nome_usuario, usuario.telefone_usuario FROM `trem` INNER JOIN usuario ON usuario.id_usuario = fk_maquinista";
          
         $result = $mysqli->query($sql);
@@ -64,14 +64,16 @@
                         <div>
                             <img src='../../assets/userICON.png' alt='' class='motoristaImg'>
                         </div>
-                    </div>
-                    <div class='EditarButton'>                  
+                    </div>";
+            if ($_SESSION['cargo_usuario'] == "Administrador") {
+                    echo "<div class='EditarButton'>                  
                     <a href='update_trem.php?id={$row['id_trem']}'>Editar<a>
                     </div>
                     <div class='ExcluirButton'>  
                     <a href='delete_trem.php?id={$row['id_trem']}'>Excluir<a>
-                    </div>
-                    </div>
+                    </div>";
+            }
+                    echo "</div>
                 
             </div>
             ";

@@ -717,3 +717,14 @@ h2 {
     width: 30px;
     height: 30px;
 }
+
+/*crud usuarios*/
+table {
+background-color: rgb(114, 114, 114);
+border-collapse: collapse;
+}
+.crud{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+

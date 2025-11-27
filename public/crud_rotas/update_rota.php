@@ -1,23 +1,32 @@
 <?php
 include '../../db.php';
+$id = $_GET['id'];
 
+$sql = "SELECT * FROM rota WHERE id_rota = '$id'";
+
+$result = $mysqli->query($sql);
+
+$row = $result->fetch_assoc();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
-    $intensidade = $_POST['intensidade'];
-    $horario = $_POST['horario'];
-    $corRota  = $_POST['corRota '];
-    
-    
-    $sql = "UPDATE rota SET intensidade_movimento = '$intensidade', horario_funcionamento = '$horario', cor_rota = '$corRota' WHERE id_trem = '$id'";
+    $nome = $_POST['nome'];
+    $estacaoOrigem = $_POST['estacaoOrigem'];
+    $estacaoDestino = $_POST['estacaoDestino'];
+    $distancia = $_POST['distancia'];
+    $intensidadeMovimento = $_POST['intensidadeMovimento'];
+    $horarioFuncionamento = $_POST['horarioFuncionamento'];
 
 
-     if ($mysqli->query($sql) === true) {
-            echo "Novo registro criado com sucesso.";
-        } else {
-            echo "Erro " . $sql . '<br>' . $mysqli->error;
-        }
-        $mysqli->close();
+
+    $sql = "UPDATE rota SET nome_rota = '$nome',  estacao_origem = '$estacaoOrigem' , estacao_destino = '$estacaoDestino', distancia = '$distancia', intensidade_movimento = '$intensidadeMovimento', horario_funcionamento = '$horarioFuncionamento' WHERE id_rota = '$id'";
+
+    if ($mysqli->query($sql) === true) {
+        echo "Novo registro criado com sucesso.";
+    } else {
+        echo "Erro " . $sql . '<br>' . $mysqli->error;
+    }
+    $mysqli->close();
 }
 ?>
 <!DOCTYPE html>
@@ -38,33 +47,52 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </header>
     <main>
 
-   <div id="form">
+        <div id="form">
             <form id="formCadastro" class="center" method="post">
 
                 <div class="inpput">
-                    <label for="intensidade">Intensidade do movimento:</label><br>
-                    <input type="number" id="intensidade" name="intensidade" class="inputTag" required>
+                    <label for="nome">Nome da rota:</label><br>
+                    <input type="text"  name="nome" class="inputTag"
+                        value="<?php echo $row['nome_rota']; ?>" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
 
                 <div class="inpput">
-                    <label for="horario">Horario de funcionamento:</label><br>
-                    <input type="number" id="horario" name="horario" class="inputTag" required>
+                    <label for="estacaoOrigem">Estação de origem:</label><br>
+                    <input type="text" id="estacaoOrigem" name="estacaoOrigem" class="inputTag"
+                        value="<?php echo $row['estacao_origem']; ?>" required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
 
                 <div class="inpput">
-                    <label for="corRota">corRota:</label><br>
-                    <input type="number" id="corRota" name="corRota" class="inputTag" required>
+                    <label for="estacaoDestino">Estação de destino:</label><br>
+                    <input type="text" id="estacaoDestino" name="estacaoDestino" class="inputTag" value="<?php echo $row['estacao_destino']; ?>"required>
                     <hr>
-                </div>
-                <br>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="distancia">Distância da rota (km):</label><br>
+                    <input type="number" id="distancia" name="distancia" class="inputTag" step="0.1"
+                        value="<?php echo $row['distancia']; ?>" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="intensidadeMovimento">Intensidade de movimento:</label><br>
+                    <input type="text" id="intensidadeMovimento" name="intensidadeMovimento" class="inputTag"
+                        value="<?php echo $row['intensidade_movimento']; ?>" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="horarioFuncionamento">Horário de funcionamento:</label><br>
+                    <input type="text" id="horarioFuncionamento" name="horarioFuncionamento" class="inputTag"
+                        value="<?php echo $row['horario_funcionamento']; ?>" required>
+                    <hr>
+                </div><br>
 
 
-
-                <button type="submit" id="cadastroButton">Cadastrar</button>
+                <button type="submit" id="cadastroButton">Atualizar</button>
 
             </form>
         </div>

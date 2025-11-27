@@ -16,6 +16,13 @@
     </header>
 
     <main>
+        <div class="navBar">
+            <div class="cadastroButton">
+                <a href='cadastro_usuarios.php'>Inserir novo registro</a>
+            </div>
+        </div>
+        <div class="crud">
+
         <?php
         include '../../db.php';
 
@@ -81,15 +88,15 @@
             }
 
             echo "</table>";
-
         } else {
             echo "Nenhum registro encontrado.";
         }
 
         $mysqli->close();
 
-        echo "<br><br><a href='cadastro_usuarios.php'>Inserir novo registro</a>";
+
         ?>
+        </div>
     </main>
 </body>
 
