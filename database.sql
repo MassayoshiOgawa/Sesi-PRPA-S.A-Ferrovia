@@ -19,20 +19,6 @@ CREATE TABLE usuario(
     estado_usuario VARCHAR(2)
 );
 
-INSERT INTO usuario 
-(nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) 
-VALUES 
-('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
-
- INSERT INTO usuario
-(nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario,
- cep_usuario, rua_usuario, bairro_usuario, cidade_usuario, estado_usuario)
-VALUES
-('$nome', '$email', '$senha', '$telefone', '$cargo', '$nascimento',
- '$cep_limpo', '$logradouro', '$bairro', '$cidade', '$estado');
-
-
-
 
 CREATE TABLE trem(
     id_trem INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -57,11 +43,6 @@ CREATE TABLE rota(
     horario_funcionamento VARCHAR(50)
 );
 
-INSERT INTO rota (nome_rota, estacao_origem, estacao_destino, distancia, intensidade_movimento, horario_funcionamento)
-VALUES 
-('rota1', 'saida1', 'estacao2', 130.5, 'alta', '05:00 - 23:00'),
-('rota2', 'saida1', 'estacao3', 95.2, 'media', '06:00 - 22:00'),
-('rota3', 'saida2', 'estacao1', 521.7, 'baixa', '07:00 - 21:00');
 
 
 CREATE TABLE trem_na_rota(
@@ -97,3 +78,13 @@ CREATE TABLE sensor_data(
     fk_id_sensor INT NOT NULL,
     FOREIGN KEY (fk_id_sensor) REFERENCES sensor(id_sensor)
 );
+
+INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) 
+VALUES 
+('adm','adm@gmail.com','1234','12345678910','Administrador','2025-05-21');
+
+INSERT INTO rota (nome_rota, estacao_origem, estacao_destino, distancia, intensidade_movimento, horario_funcionamento)
+VALUES 
+('rota1', 'saida1', 'estacao2', 130.5, 'alta', '05:00 - 23:00'),
+('rota2', 'saida1', 'estacao3', 95.2, 'media', '06:00 - 22:00'),
+('rota3', 'saida2', 'estacao1', 521.7, 'baixa', '07:00 - 21:00');

@@ -90,21 +90,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <option value="1">...</option>
                         <?php
                             include '../../db.php';
-                            $sql = "SELECT id , nome_usuario FROM usuario WHERE  cargo_usuario = 'Maquinista'";
+                            $sql = "SELECT id_usuario , nome_usuario FROM usuario WHERE  cargo_usuario = 'Maquinista'";
 
                             $result = $mysqli->query($sql);
 
                             while ($row = $result->fetch_assoc()) {
-                                echo"<option value='{$row['id']}'>{$row['nome_usuario']}</option>";
+                                echo"<option value='{$row['id_usuario']}'>{$row['nome_usuario']}</option>";
                             }
                         ?>
                     </select>
                     <hr>
                 </div><br>
 
-
-                <button type="submit" id="cadastroButton">Cadastrar</button>
-
+                <button type="submit" class="cadastroButton">Cadastrar</button>
+                
+                
             </form>
         </div>
 

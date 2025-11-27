@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: #B3D6E5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden;
+
 }
 
 .cab {
@@ -71,7 +71,7 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 20px;
-    font-size:;
+    
 }
 
 .cadastroButton {

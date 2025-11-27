@@ -32,8 +32,8 @@
                         <th>Telefone</th>
                         <th>Cargo</th>
                         <th>Nascimento</th>
+                        <th>Senha</th>
                         <th>CEP</th>
-                        <th>Endereço</th>
                         <th>Ações</th>
                     </tr>";
 
@@ -63,19 +63,19 @@
                 }
 
                 echo "<tr>
-                <td> {$row['id']} </td>
+                <td> {$row['id_usuario']} </td>
                 <td> {$row['nome_usuario']} </td>
                 <td> {$row['email_usuario']} </td>
-                <td> {$row['senha_usuario']} </td>
                 <td> {$row['telefone_usuario']} </td>
                 <td> {$row['cargo_usuario']} </td>
                 <td> {$row['nascimento_usuario']} </td>
+                <td> {$row['senha_usuario']} </td>
+                <td> {$row['cep_usuario']} </td>
 
-                        <td>
-                    <a href='update.php?id={$row['id']}'>Editar<a>
-                    <a href='delete.php?id={$row['id']}'>Excluir<a>
-                
-                        </td>
+                <td>
+                <a href='update_usuarios.php?id={$row['id_usuario']}'>Editar<a>
+                <a href='delete_usuarios.php?id={$row['id_usuario']}'>Excluir<a>
+                </td>
               </tr>   
         ";
             }

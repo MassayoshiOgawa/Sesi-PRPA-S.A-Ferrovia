@@ -4,7 +4,7 @@ include '../../db.php';
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM usuario where id=$id";
+$sql = "SELECT * FROM usuario where id_usuario=$id";
 
 $result = $mysqli->query($sql);
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cargo = $_POST['Cargo'];
 
 
-    $sql = "UPDATE usuario SET nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento', WHERE id=$id";
+    $sql = "UPDATE usuario SET nome_usuario = '$name', email_usuario =' $email', senha_usuario = '$senha' , telefone_usuario = '$celular' , cargo_usuario = '$cargo', nascimento_usuario = '$nascimento', WHERE id_usuario=$id";
 
     if ($mysqli->query($sql) === true) {
         echo "Registro atualizado com sucesso.
@@ -33,9 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 
-$sql = "SELECT * FROM usuario WHERE id=$id";
-$result = $mysqli->query($sql);
-$row = $result->fetch_assoc();
+
 
 ?>
 
@@ -107,7 +105,7 @@ $row = $result->fetch_assoc();
                 <br>
 
 
-                <button type="submit" id="cadastroButton" class="cadastroButton">Cadastrar</button>
+                <button type="submit" id="cadastroButton" class="cadastroButton">Atualizar</button>
 
             </form>
         </div>

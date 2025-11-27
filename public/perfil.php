@@ -16,9 +16,9 @@
     <?php 
         include '../db.php';
         session_start();
-        $idUser =  $_SESSION['id'];
+        $idUser =  $_SESSION['id_usuario'];
 
-        $sql = "SELECT * FROM usuario WHERE id =  $idUser";
+        $sql = "SELECT * FROM usuario WHERE id_usuario =  $idUser";
 
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();

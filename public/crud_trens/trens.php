@@ -25,7 +25,7 @@
         include '../../db.php';
         $id = 1;
 
-        $sql = "SELECT trem.*, usuario.nome_usuario, usuario.telefone_usuario FROM `trem` INNER JOIN usuario ON usuario.id = fk_maquinista";
+        $sql = "SELECT trem.*, usuario.nome_usuario, usuario.telefone_usuario FROM `trem` INNER JOIN usuario ON usuario.id_usuario = fk_maquinista";
          
         $result = $mysqli->query($sql);
 

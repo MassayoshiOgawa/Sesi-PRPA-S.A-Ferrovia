@@ -11,14 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nascimento = $_POST['nascimento'];
     $cargo = $_POST['Cargo'];
 
-    $email = $_POST['Email'];
 
-$checkEmail = "SELECT * FROM usuario WHERE email_usuario = '$email'";
-$resultEmail = $mysqli->query($checkEmail);
+    $checkEmail = "SELECT * FROM usuario WHERE email_usuario = '$email'";
+    $resultEmail = $mysqli->query($checkEmail);
 
-if ($resultEmail->num_rows > 0) {
-    die("Erro: Este e-mail já está cadastrado.");
-}
+    if ($resultEmail->num_rows > 0) {
+        die("Erro: Este e-mail já está cadastrado.");
+    }
 
 
 
@@ -145,38 +144,38 @@ if ($resultEmail->num_rows > 0) {
                 <br>
 
                 <div class="inpput">
-    <label for="rua">Rua:</label><br>
-    <input type="text" id="rua" name="rua" class="inputTag" readonly>
-    <hr>
-</div>
+                    <label for="rua">Rua:</label><br>
+                    <input type="text" id="rua" name="rua" class="inputTag" readonly>
+                    <hr>
+                </div>
 
-<br>
+                <br>
 
-<div class="inpput">
-    <label for="bairro">Bairro:</label><br>
-    <input type="text" id="bairro" name="bairro" class="inputTag" readonly>
-    <hr>
-</div>
+                <div class="inpput">
+                    <label for="bairro">Bairro:</label><br>
+                    <input type="text" id="bairro" name="bairro" class="inputTag" readonly>
+                    <hr>
+                </div>
 
-<br>
-
-
-<div class="inpput">
-    <label for="cidade">Cidade:</label><br>
-    <input type="text" id="cidade" name="cidade" class="inputTag" readonly>
-    <hr>
-</div>
-
-<br>
+                <br>
 
 
-<div class="inpput">
-    <label for="estado">Estado:</label><br>
-    <input type="text" id="estado" name="estado" class="inputTag" readonly>
-    <hr>
-</div>
+                <div class="inpput">
+                    <label for="cidade">Cidade:</label><br>
+                    <input type="text" id="cidade" name="cidade" class="inputTag" readonly>
+                    <hr>
+                </div>
 
-<br>
+                <br>
+
+
+                <div class="inpput">
+                    <label for="estado">Estado:</label><br>
+                    <input type="text" id="estado" name="estado" class="inputTag" readonly>
+                    <hr>
+                </div>
+
+                <br>
 
 
                 <button type="submit" id="cadastroButton" class="cadastroButton">Cadastrar</button>
