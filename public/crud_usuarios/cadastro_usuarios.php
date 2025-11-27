@@ -24,12 +24,12 @@ if ($resultEmail->num_rows > 0) {
 
     $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento')";
 
-     if ($mysqli->query($sql) === true) {
-            echo "Novo registro criado com sucesso.";
-        } else {
-            echo "Erro " . $sql . '<br>' . $mysqli->error;
-        }
-        $mysqli->close();
+    if ($mysqli->query($sql) === true) {
+        echo "Novo registro criado com sucesso.";
+    } else {
+        echo "Erro " . $sql . '<br>' . $mysqli->error;
+    }
+    $mysqli->close();
 }
 ?>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ if ($resultEmail->num_rows > 0) {
     <link rel="stylesheet" href="../../style/style.css">
     <title>Cadastro</title>
 
-<script>
+    <script>
         async function buscarEndereco() {
             const cep = document.getElementById('cep').value.replace(/\D/g, '');
             if (cep.length !== 8) {
@@ -179,8 +179,7 @@ if ($resultEmail->num_rows > 0) {
 <br>
 
 
-
-                <button type="submit" id="cadastroButton">Cadastrar</button>
+                <button type="submit" id="cadastroButton" class="cadastroButton">Cadastrar</button>
 
             </form>
         </div>

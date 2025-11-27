@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = ""; // <-- DEIXA VAZIO PFV
-$dbname = "ferrovia_gittrens";
+$password = "root";
+$dbname = "ferrovia_GitTrens";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 

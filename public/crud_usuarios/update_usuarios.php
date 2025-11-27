@@ -107,7 +107,7 @@ $row = $result->fetch_assoc();
                 <br>
 
 
-                <button type="submit" id="cadastroButton">Cadastrar</button>
+                <button type="submit" id="cadastroButton" class="cadastroButton">Cadastrar</button>
 
             </form>
         </div>

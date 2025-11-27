@@ -80,8 +80,8 @@
                         </td>
 
                         <td>
-                            <a href='update.php?id={$row['id']}'>Editar</a>
-                            <a href='delete.php?id={$row['id']}'>Excluir</a>
+                            <a href='update_usuarios.php?id={$row['id']}'>Editar</a>
+                            <a href='delete_usuarios.php?id={$row['id']}'>Excluir</a>
                         </td>
                     </tr>";
             }

@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="inpput">
                     <label for="maquinista">ID do Maquinista:</label><br>
                     <select name="maquinista" id="maquinista" class="inputTag"  required>
-                        <option value="nulo">...</option>
+                        <option value="1">...</option>
                         <?php
                             include '../../db.php';
                             $sql = "SELECT id , nome_usuario FROM usuario WHERE  cargo_usuario = 'Maquinista'";

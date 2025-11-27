@@ -38,7 +38,7 @@
                                 </div>
                                 <h1>Rota {$row['id_rota']}</h1>
                             </div>
-                            <img src='../../assets/trianguloICON.png' alt=''>
+                            <img src='../../assets/trianguloICON.png' alt='' class='triangulo'>
                         </div>
                             <p>Nome da rota: {$row['nome_rota']}</p>
                             <p>Estação de origem: {$row['estação_origem']}</p>
@@ -46,7 +46,9 @@
                             <p>Distãncia rota: {$row['distancia']}</p>
                             <p>Intensidade de movimento: {$row['intensidade_movimento']}</p>
                             <p>Horário de funcionamento: {$row['horario_funcionamento']}</p>
+                            <div class='EditarButton'>   
                             <a href='update_trem.php?id={$row['id_rota']}'>Editar<a>
+                            </div>
                         </div>
 
                     </div>

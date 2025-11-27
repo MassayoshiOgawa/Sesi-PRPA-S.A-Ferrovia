@@ -15,7 +15,7 @@ let currId = null
 function selecionarRota(rota, id) {
     id = `rota${id}`
     if (currRota == null) {
-        rota.style.backgroundColor = "rgba(48, 173, 245, 0.71)"
+        rota.style.backgroundColor = "rgb(114, 114, 114)"
         rota.style.borderColor = "black"
         document.getElementById(id).style.opacity = 1
         currRota = rota
@@ -33,7 +33,7 @@ function selecionarRota(rota, id) {
             document.getElementById(currId).style.opacity = 0
 
             document.getElementById(id).style.opacity = 1
-            rota.style.backgroundColor = "rgba(48, 173, 245, 0.71)"
+            rota.style.backgroundColor = "rgb(114, 114, 114)"
             rota.style.borderColor = "black"
             currId = id
             currRota = rota
