@@ -1,8 +1,8 @@
 <?php
 include '../../db.php';
+$id = $_GET['id'];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
 
     $modelo              = $_POST['modelo'];
     $capacidadeCarga    = $_POST['capacidade_carga'];
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $maquinista          = $_POST['maquinista'];
 
 
-    $sql = "UPDATE trem SET modelo='$modelo',capacidade_carga='$capacidadeCarga', empresa_proprietaria='$empresaProprietaria', status_trem='$statusTrem',  consumo_combustível='$consumoCombustivel', ano_trem='$anoTrem', fk_maquinista='$maquinista' WHERE id_trem='$id'";
+    $sql = "UPDATE trem SET modelo='$modelo',capacidade_carga='$capacidadeCarga', empresa_proprietaria='$empresaProprietaria', status_trem='$statusTrem',  consumo_combustivel='$consumoCombustivel', ano_trem='$anoTrem', fk_maquinista='$maquinista' WHERE id_trem='$id'";
 
 
     if ($mysqli->query($sql) === true) {
@@ -86,14 +86,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <hr>
                 </div><br>
 
-                <div class="inpput">
+                 <div class="inpput">
                     <label for="maquinista">ID do Maquinista:</label><br>
-                    <input type="number" id="maquinista" name="maquinista" class="inputTag" required>
+                    <select name="maquinista" id="maquinista" class="inputTag"  required>
+                        <option value="1">...</option>
+                        <?php
+                            include '../../db.php';
+                            $sql = "SELECT id_usuario , nome_usuario FROM usuario WHERE  cargo_usuario = 'Maquinista'";
+
+                            $result = $mysqli->query($sql);
+
+                            while ($row = $result->fetch_assoc()) {
+                                echo"<option value='{$row['id_usuario']}'>{$row['nome_usuario']}</option>";
+                            }
+                        ?>
+                    </select>
                     <hr>
                 </div><br>
 
 
-                <button type="submit" id="cadastroButton">Cadastrar</button>
+                <button type="submit" id="cadastroButton">Atualizar</button>
 
             </form>
         </div>

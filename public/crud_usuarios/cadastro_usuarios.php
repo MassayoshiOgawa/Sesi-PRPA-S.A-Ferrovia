@@ -5,12 +5,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     $name = $_POST['nome'];
-    $celular = $_POST['Celular'];
-    $email = $_POST['Email'];
+    $celular = $_POST['celular'];
+    $email = $_POST['email'];
     $senha = $_POST['senha'];
     $nascimento = $_POST['nascimento'];
-    $cargo = $_POST['Cargo'];
-
+    $cargo = $_POST['cargo'];
+    $cep = $_POST['cep'];
+    $rua = $_POST['rua']; 
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
 
     $checkEmail = "SELECT * FROM usuario WHERE email_usuario = '$email'";
     $resultEmail = $mysqli->query($checkEmail);
@@ -21,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-    $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento')";
+    $sql = " INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, telefone_usuario, cargo_usuario, nascimento_usuario,
+    cep_usuario, rua_usuario,bairro_usuario,cidade_usuario,estado_usuario) VALUES ('$name','$email','$senha','$celular','$cargo','$nascimento' ,'$cep','$rua','$bairro','$cidade','$estado')";
 
     if ($mysqli->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
@@ -96,15 +101,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <br>
 
                 <div class="inpput">
-                    <label for="Celular">Telefone:</label><br>
-                    <input type="number" id="Celular" name="Celular" class="inputTag" required>
+                    <label for="celular">Telefone:</label><br>
+                    <input type="number" id="celular" name="celular" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
 
                 <div class="inpput">
-                    <label for="Email">Email:</label><br>
-                    <input type="text" id="Email" name="Email" class="inputTag" required>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" class="inputTag" required>
                     <hr>
                 </div>
                 <br>
@@ -124,8 +129,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <br>
 
                 <div class="inpput">
-                    <label for="Cargo">Cargo:</label><br>
-                    <select name="Cargo" id="">
+                    <label for="cargo">Cargo:</label><br>
+                    <select name="cargo" id="">
                         <option value=""></option>
                         <option value="Administrador">Administrador</option>
                         <option value="Maquinista">Maquinista</option>
