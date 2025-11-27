@@ -51,7 +51,7 @@
                         <p>capacidade de carga: {$row['capacidade_carga']}</p>
                         <p>empresa proprietaria: {$row['empresa_proprietaria']}</p>
                         <p>status trem: {$row['status_trem']}</p>
-                        <p>consumo de combustível: {$row['consumo_combustível']}</p>
+                        <p>consumo de combustível: {$row['consumo_combustivel']}</p>
                         <p>ano trem: {$row['ano_trem']}</p>
                     </div>
     

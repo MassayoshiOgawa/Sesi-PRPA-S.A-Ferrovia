@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $anoTrem            = $_POST['ano_trem'];
     $maquinista          = $_POST['maquinista'];
 
-    $sql = "INSERT INTO trem (modelo, capacidade_carga, empresa_proprietaria, status_trem, consumo_combustível, ano_trem, fk_maquinista) VALUES ('$modelo', '$capacidadeCarga', '$empresaProprietaria', '$statusTrem', '$consumoCombustivel', '$anoTrem', '$maquinista')";
+    $sql = "INSERT INTO trem (modelo, capacidade_carga, empresa_proprietaria, status_trem, consumo_combustivel, ano_trem, fk_maquinista) VALUES ('$modelo', '$capacidadeCarga', '$empresaProprietaria', '$statusTrem', '$consumoCombustivel', '$anoTrem', '$maquinista')";
 
     if ($mysqli->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
