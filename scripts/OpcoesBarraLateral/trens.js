@@ -1,52 +1,29 @@
-function print(msg) {
-    console.log(msg)
+function voltar() {
+    window.location.replace("../homepage.php");
 }
 
-let estado = false;
-let tamanho = "0" ;
-let currBox = null;
-let currTri = null
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".BoxStatus");
 
-function abrir(box){
-    var tri = box.querySelector("img");
+    boxes.forEach(box => {
+        const tri = box.querySelector(".triangulo");
 
-    if (tamanho !== "0" || currBox !== null){
-        if (currBox !== null && currBox !== box) { 
-            tamanho = "50px";
-            currBox.style.height = tamanho;
-            currTri.style.transform = "rotate(0deg)";
-            print("A")
-            tamanho = "500px";
-            box.style.height = tamanho;
-            tri.style.transform = "rotate(180deg)";
-            estado = false;
-            currBox = box;
-            currTri = tri;
-        }
-    }
-    
-    if (estado == false){
-        tamanho = "500px";
-        tri.style.transform = "rotate(180deg)";
-        box.style.height = tamanho;
-        estado = true;
-        currBox = box;
-        currTri = tri;
-        print("B")
-    }else{
-        tri.style.transform = "rotate(0deg)";
-        tamanho = "50px";
-        box.style.height = tamanho;
-        estado = false;
-        currBox = null;
-        currTri = null;
-        print("C")
-    }
+        box.addEventListener("click", () => {
+            const isOpen = box.classList.contains("open");
 
-    
+            // Fecha todos os outros
+            boxes.forEach(b => {
+                b.classList.remove("open");
+                b.style.height = "60px";
+                b.querySelector(".triangulo").style.transform = "rotate(0deg)";
+            });
 
-}
-
-function voltar(){
-    window.location.replace("../homepage.php")
-}
+            // Abre o atual
+            if (!isOpen) {
+                box.classList.add("open");
+                box.style.height = "auto";
+                tri.style.transform = "rotate(180deg)";
+            }
+        });
+    });
+});

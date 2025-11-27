@@ -3,7 +3,7 @@
 include '../../db.php';
 $id = $_GET['id'];
 
-$sql = " DELETE FROM trem WHERE id=$id ";
+$sql = " DELETE FROM trem WHERE id_trem = $id ";
 
 if ($mysqli -> query($sql) === true) {
     echo "Registro excluído com sucesso.

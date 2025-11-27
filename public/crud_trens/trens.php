@@ -16,7 +16,11 @@
 
     </header>
     <main>
-        <a href="cadastro_trem.php">cadstrar trem</a>
+        <div class="navBar">
+            <div class="cadastroButton">
+                <a href="cadastro_trem.php">Cadastrar trem</a>
+            </div>
+        </div>
         <?php
         include '../../db.php';
         $id = 1;
@@ -61,9 +65,13 @@
                             <img src='../../assets/userICON.png' alt='' class='motoristaImg'>
                         </div>
                     </div>
+                    <div class='EditarButton'>                  
                     <a href='update_trem.php?id={$row['id_trem']}'>Editar<a>
+                    </div>
+                    <div class='ExcluirButton'>  
                     <a href='delete_trem.php?id={$row['id_trem']}'>Excluir<a>
-                </div>
+                    </div>
+                    </div>
                 
             </div>
             ";

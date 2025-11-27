@@ -87,7 +87,7 @@
                 <?php endif;?>
                 <br>
                 <div class="flex" style="flex-direction: column;">
-                    <button type="submit"  class="cadastroButton">Enviar</button>
+                    <button type="submit"  class="loginButton">Enviar</button>
 
 
                 </div>
