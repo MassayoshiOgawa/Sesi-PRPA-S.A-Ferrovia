@@ -65,7 +65,10 @@
                 ?>
                 </div>
 
-            <h1 onclick="relatar()" id="botaoRelatar">Relatar ocorrido</h1>
+                <div class="relatarButton">
+
+                    <button onclick="relatar()"  class="botaoRelatar"><h3>Relatar ocorrido</h3></button>
+                </div>
         <p><!--NÃO APAGA ESSE PARAGRAFO--></p>
     </main>
     <footer>

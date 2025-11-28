@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $horario  = $_POST['horario'];
     $data  = $_POST['data'];
     $prioridade  = $_POST['prioridade'];
-    
+
     $sql = "INSERT INTO notificacao (assunto, descricao, estado, horario, data_notificacao, prioridade) VALUES ('$assunto','$descricao', '$estado', '$horario', '$data', '$prioridade')";
 
     if ($mysqli->query($sql) === true) {
@@ -38,40 +38,67 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <img src="../assets/voltarICON.png" alt="" class="voltarICON" onclick="voltar(1)">
     </header>
     <main>
-        <form id="escreverNotificacao_form" class="relatarContainer" method="POST">
 
-            <label for="assunto" class="relatarLabel">Assunto:</label>
-            <input type="text" id="assunto" name="assunto" class="relatarInput"required>
 
-            <label for="descricao" class="relatarLabel">Descrição:</label>
-            <textarea id="descricao" name="descricao" class="relatarInput" required></textarea>
 
-            <label for="estado" class="relatarLabel">Estado:</label>
-            <select id="estado" name="estado"  class="relatarInput" required >
-                <option value="nulo">...</option>
-                <option value="a fazer">A fazer</option>
-                <option value="fazendo">Fazendo</option>
-                <option value="feito">Feito</option>
-            </select>
+        <div id="form">
+            <form id="formCadastro" class="center" method="post">
 
-            <label for="horario" class="relatarLabel">Horário:</label>
-            <input type="time" id="horario" name="horario" class="relatarInput" required>
+                <div class="inpput">
+                    <label for="assunto" class="relatarLabel">Assunto:</label><br>
+                    <input type="text" id="assunto" name="assunto" class="inputTag" required>
+                    <hr>
+                </div><br>
 
-            <label for="data" class="relatarLabel">Data da Notificação:</label>
-            <input type="date" id="data" name="data"  class="relatarInput" required>
+                <div class="inpput">
+                    <label for="descricao" class="relatarLabel">Descrição:</label><br>
+                    <textarea id="descricao" name="descricao" class="inputTag" required></textarea>
+                    <hr>
+                </div><br>
 
-            <label for="prioridade" class="relatarLabel">Prioridade:</label>
-            <select id="prioridade" name="prioridade"  class="relatarInput"required>
-                <option value="nulo">...</option>
-                <option value="baixa">Baixa</option>
-                <option value="média">Média</option>
-                <option value="alta">Alta</option>
-            </select>
-            <br>
-            <button type="submit">Salvar Notificação</button>
+                <div class="inpput">
+                    <label for="estado" class="relatarLabel">Estado:</label><br>
+                    <select id="estado" name="estado" class="inputTag" required>
+                        <option value="nulo">...</option>
+                        <option value="a fazer">A fazer</option>
+                        <option value="fazendo">Fazendo</option>
+                        <option value="feito">Feito</option>
+                    </select>
+                    <hr>
+                </div><br>
+
+
+                <div class="inpput">
+                    <label for="horario" class="relatarLabel">Horário:</label><br>
+                    <input type="time" id="horario" name="horario" class="inputTag" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="data" class="relatarLabel">Data da Notificação:</label><br>
+                    <input type="date" id="data" name="data" class="inputTag" required>
+                    <hr>
+                </div><br>
+
+                <div class="inpput">
+                    <label for="prioridade" class="relatarLabel">Prioridade:</label><br>
+                    <select id="prioridade" name="prioridade" class="inputTag" required>
+                        <option value="nulo">...</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="média">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                    <hr>
+                </div><br>
+                <br>
+                <button type="submit" class="cadastroButton"><h4>Salvar Notificação</h4></button>
+
+        </div>
         </form>
-        </main>
-    
+
+        </div>
+    </main>
+
 </body>
 
 </html>

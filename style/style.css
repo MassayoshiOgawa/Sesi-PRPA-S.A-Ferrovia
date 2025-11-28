@@ -52,6 +52,7 @@ body {
     border-radius: 20px;
     box-shadow: 4px 5px 1px #0E394C;
     padding: 5px 20px;
+    
 }
 
 #loginbutton {
@@ -71,7 +72,7 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 20px;
-    
+
 }
 
 .cadastroButton {
@@ -145,7 +146,11 @@ footer>p {
 
 .inputTag {
     all: unset;
-    width: 100%;
+    background-color: rgb(114, 114, 114);
+    color: white;
+    padding: 5px ;
+    overflow-wrap: break-word;
+    
 }
 
 hr {
@@ -279,9 +284,16 @@ h2 {
     margin-top: 20px;
     height: 450px;
     gap: 10px;
-
+    align-items: center;
+    justify-content: center;
     overflow-y: scroll;
     max-width: 400px;
+
+}
+
+.containerNotificacoes::-webkit-scrollbar {
+    display: none;
+
 }
 
 .containerNotificacoes .notificacoes {
@@ -446,23 +458,33 @@ h2 {
 
 }
 
-#botaoRelatar {
-    background-color: #B3D6E5(255, 166, 0, 0.788);
-    width: 260px;
+.botaoRelatar {
+    background-color: rgb(114, 114, 114);
     text-align: center;
-    margin: auto;
-    margin-top: 40px;
-    box-shadow: 5px 5px 1px black;
+    height: 5%;
+    width: 200px;
+    padding: 1%;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+
+}
+
+.relatarButton {
+    display: flex;
+    justify-content: center;
 }
 
 /*INÍCIO ESCOPO CSS DO ESCREVER NOTIFICAÇÕES*/
 
 
 .relatarContainer {
-    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
 }
 
 .relatarLabel {
@@ -473,20 +495,6 @@ h2 {
     font-weight: 600;
     font-size: 20px;
     margin-left: 10px;
-}
-
-
-.relatarInput {
-    all: unset;
-    min-height: 50px;
-    background-color: rgb(114, 114, 114);
-    color: white;
-    border-radius: 20px;
-    box-shadow: 4px 5px 1px #B3D6E5;
-    padding: 5px 20px;
-    resize: none;
-    overflow-wrap: break-word;
-    line-height: 1.4;
 }
 
 .relatarSubmit {
@@ -510,7 +518,7 @@ h2 {
 }
 
 .ExcluirButton {
-    background-color:crimson;
+    background-color: crimson;
     text-align: center;
     margin-left: 4%;
     padding: 1%;
@@ -720,11 +728,11 @@ h2 {
 
 /*crud usuarios*/
 table {
-background-color: rgb(114, 114, 114);
-border-collapse: collapse;
+    background-color: rgb(114, 114, 114);
+    border-collapse: collapse;
 }
-.crud{
+
+.crud {
     padding-left: 20%;
     padding-right: 20%;
 }
-
