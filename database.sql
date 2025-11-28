@@ -11,7 +11,7 @@ CREATE TABLE usuario(
     telefone_usuario VARCHAR(20) NOT NULL,
     cargo_usuario ENUM('Administrador','Maquinista','Usuario') NOT NULL,
     nascimento_usuario DATE NOT NULL,
-    foto_perfil VARCHAR(255) DEFAULT 'default.jpg',
+    foto_perfil VARCHAR(255) DEFAULT 'userICON.png',
     cep_usuario VARCHAR(8),
     rua_usuario VARCHAR(100),
     bairro_usuario VARCHAR(100),

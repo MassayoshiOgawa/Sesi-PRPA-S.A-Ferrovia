@@ -15,7 +15,7 @@
         <img class="voltarICON" src="../assets/setaICON.png" alt="" onclick="voltar()">
     </header>
     <main>
-        
+        <form  method="post" >
             <?php
             include '../db.php';
             session_start();
@@ -26,11 +26,16 @@
             $result = $mysqli->query($sql);
             $row = $result->fetch_assoc();
 
+          
             echo "
-            <img class='PerfilIcon' src='../assets/userICON.png' alt=''>
+            <img class='PerfilIcon' src='../assets/foto_perfil/{$row['foto_perfil']}' alt=''>
             <div id='form'>
                 <div  class='formCadastro'>
-        
+
+                    <label>Selecione sua foto de perfil:</label><br>
+                    <input type='file' name='foto' accept='image/*' required>
+                   
+
                     <div class='inpput'>
                         <p class='relatarInput'> Email: {$row['email_usuario']}</p>
                     </div>
@@ -68,9 +73,10 @@
             ";
             ?>
             <div class="relatarButton">
-            <button type="submit" class="botaoRelatar"> Atualizar</button>
+                <button type="submit" class="botaoRelatar"> Atualizar</button>
             </div>
-        </div>
+            </div>
+        </form>
     </main>
 </body>
 
