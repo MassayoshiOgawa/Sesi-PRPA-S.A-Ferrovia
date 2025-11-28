@@ -64,7 +64,7 @@
                 
                 ?>
                 </div>
-
+                <br><br><br>
                 <div class="relatarButton">
 
                     <button onclick="relatar()"  class="botaoRelatar"><h3>Relatar ocorrido</h3></button>

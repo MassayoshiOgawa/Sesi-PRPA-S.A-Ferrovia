@@ -6,9 +6,7 @@ $id = $_GET['id'];
 $sql = " DELETE FROM usuario WHERE id_usuario=$id ";
 
 if ($mysqli -> query($sql) === true) {
-    echo "Registro excluído com sucesso.
-        <a href='read.php'>Ver registros.</a>
-        ";
+    header("location: read_usuarios.php");
 } else {
     echo "Erro " . $sql . '<br>' . $mysqli->error;
 }

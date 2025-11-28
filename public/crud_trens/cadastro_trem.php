@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO trem (modelo, capacidade_carga, empresa_proprietaria, status_trem, consumo_combustivel, ano_trem, fk_maquinista) VALUES ('$modelo', '$capacidadeCarga', '$empresaProprietaria', '$statusTrem', '$consumoCombustivel', '$anoTrem', '$maquinista')";
 
     if ($mysqli->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        header("location: trens.php");
     } else {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
     }

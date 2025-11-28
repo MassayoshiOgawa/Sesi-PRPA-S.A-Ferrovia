@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "UPDATE trem SET modelo='$modelo',capacidade_carga='$capacidadeCarga', empresa_proprietaria='$empresaProprietaria', status_trem='$statusTrem',  consumo_combustivel='$consumoCombustivel', ano_trem='$anoTrem', fk_maquinista='$maquinista' WHERE id_trem='$id'";
 
     if ($mysqli->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        header("location: trens.php");
     } else {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
     }

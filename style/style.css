@@ -52,7 +52,7 @@ body {
     border-radius: 20px;
     box-shadow: 4px 5px 1px #0E394C;
     padding: 5px 20px;
-    
+
 }
 
 #loginbutton {
@@ -148,9 +148,9 @@ footer>p {
     all: unset;
     background-color: rgb(114, 114, 114);
     color: white;
-    padding: 5px ;
+    padding: 5px;
     overflow-wrap: break-word;
-    
+
 }
 
 hr {
@@ -167,11 +167,7 @@ header {
 
 .flex {
     display: flex;
-}
-
-.flex2 {
-    display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 header>div {
@@ -484,7 +480,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 .relatarLabel {
@@ -730,9 +726,103 @@ h2 {
 table {
     background-color: rgb(114, 114, 114);
     border-collapse: collapse;
+    width: 100%;
 }
 
 .crud {
-    padding-left: 20%;
-    padding-right: 20%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: black solid 2px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    /* centraliza horizontalmente */
+    flex-direction: column;
+    background-color: #4AB9D2;
+    /* corrigido */
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Responsividade para telas menores */
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Esconde cabeçalho da tabela */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1rem 0;
+    }
+
+    tr:nth-child(odd) {
+        background:rgb(114, 114, 114);
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    /* Labels corretos para cada coluna */
+    td:nth-of-type(1):before {
+        content: "ID Usuário";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Nome";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Email";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Telefone";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Cargo";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Nascimento";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Senha";
+    }
+
+    td:nth-of-type(8):before {
+        content: "CEP";
+    }
+
+    td:nth-of-type(9):before {
+        content: "Ações";
+    }
 }

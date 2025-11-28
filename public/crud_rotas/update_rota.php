@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "UPDATE rota SET nome_rota = '$nome',  estacao_origem = '$estacaoOrigem' , estacao_destino = '$estacaoDestino', distancia = '$distancia', intensidade_movimento = '$intensidadeMovimento', horario_funcionamento = '$horarioFuncionamento' WHERE id_rota = '$id'";
 
     if ($mysqli->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        header("location: rotas.php");
     } else {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
     }

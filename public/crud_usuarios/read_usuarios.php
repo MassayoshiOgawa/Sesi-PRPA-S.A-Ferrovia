@@ -21,82 +21,93 @@
                 <a href='cadastro_usuarios.php'>Inserir novo registro</a>
             </div>
         </div>
-        <div class="crud">
+        <div class="flex">
 
-        <?php
-        include '../../db.php';
+            <div class="crud">
+                <br>
+                <br>
+                <br>
+                <?php
+                include '../../db.php';
 
-        $sql = "SELECT * FROM usuario";
-        $result = $mysqli->query($sql);
+                $sql = "SELECT * FROM usuario";
+                $result = $mysqli->query($sql);
 
-        if ($result->num_rows > 0) {
+                if ($result->num_rows > 0) {
 
-            echo "<table border='1'>
-                    <tr>
-                        <th>id_usuario</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Cargo</th>
-                        <th>Nascimento</th>
-                        <th>Senha</th>
-                        <th>CEP</th>
-                        <th>Ações</th>
-                    </tr>";
+                    echo "<table border='1' role='table'>
+                    <thead role='rowgroup'>
+                        <tr role='row'>
+                            <th  role='columnheader'>id_usuario</th>
+                            <th  role='columnheader'>Nome</th>
+                            <th  role='columnheader'>Email</th>
+                            <th  role='columnheader'>Telefone</th>
+                            <th  role='columnheader'>Cargo</th>
+                            <th  role='columnheader'>Nascimento</th>
+                            <th  role='columnheader'>Senha</th>
+                            <th  role='columnheader'>CEP</th>
+                            <th  role='columnheader'>Ações</th>
+                        </tr>
+                         </thead>";
+                        
 
-            while ($row = $result->fetch_assoc()) {
+                    while ($row = $result->fetch_assoc()) {
 
-                // PEGA O CEP DO BANCO
-                $cep = $row['cep_usuario'] ?? '';
+                        // PEGA O CEP DO BANCO
+                        $cep = $row['cep_usuario'] ?? '';
 
-                if (!empty($cep)) {
-                    $cep_limpo = preg_replace('/\D/', '', $cep);
+                        if (!empty($cep)) {
+                            $cep_limpo = preg_replace('/\D/', '', $cep);
 
-                    $api_url = "https://brasilapi.com.br/api/cep/v1/" . $cep_limpo;
+                            $api_url = "https://brasilapi.com.br/api/cep/v1/" . $cep_limpo;
 
-                    $ch = curl_init($api_url);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    $response = curl_exec($ch);
-                    curl_close($ch);
+                            $ch = curl_init($api_url);
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            $response = curl_exec($ch);
+                            curl_close($ch);
 
-                    $endereco = json_decode($response, true);
+                            $endereco = json_decode($response, true);
 
-                    $logradouro = $endereco['street'] ?? '---';
-                    $bairro     = $endereco['neighborhood'] ?? '---';
-                    $cidade     = $endereco['city'] ?? '---';
-                    $estado     = $endereco['state'] ?? '---';
+                            $logradouro = $endereco['street'] ?? '---';
+                            $bairro     = $endereco['neighborhood'] ?? '---';
+                            $cidade     = $endereco['city'] ?? '---';
+                            $estado     = $endereco['state'] ?? '---';
+                        } else {
+                            $logradouro = $bairro = $cidade = $estado = '---';
+                        }
+
+                        echo "<tbody role='rowgroup'>
+                                <tr role='row'>
+                                <td role='cell'> {$row['id_usuario']} </td>
+                                <td role='cell'> {$row['nome_usuario']} </td>
+                                <td role='cell'> {$row['email_usuario']} </td>
+                                <td role='cell'> {$row['telefone_usuario']} </td>
+                                <td role='cell'> {$row['cargo_usuario']} </td>
+                                <td role='cell'> {$row['nascimento_usuario']} </td>
+                                <td role='cell'> {$row['senha_usuario']} </td>
+                                <td role='cell'> {$row['cep_usuario']} </td>
+                
+                                <td  role='cell'>
+                                <a href='update_usuarios.php?id={$row['id_usuario']}'>Editar<a>
+                                <a href='delete_usuarios.php?id={$row['id_usuario']}'>Excluir<a>
+                                </td>
+                            </tr>   
+                            </tbody>
+                            ";
+                    }
+
+                    echo "</table>";
                 } else {
-                    $logradouro = $bairro = $cidade = $estado = '---';
+                    echo "Nenhum registro encontrado.";
                 }
 
-                echo "<tr>
-                <td> {$row['id_usuario']} </td>
-                <td> {$row['nome_usuario']} </td>
-                <td> {$row['email_usuario']} </td>
-                <td> {$row['telefone_usuario']} </td>
-                <td> {$row['cargo_usuario']} </td>
-                <td> {$row['nascimento_usuario']} </td>
-                <td> {$row['senha_usuario']} </td>
-                <td> {$row['cep_usuario']} </td>
-
-                <td>
-                <a href='update_usuarios.php?id={$row['id_usuario']}'>Editar<a>
-                <a href='delete_usuarios.php?id={$row['id_usuario']}'>Excluir<a>
-                </td>
-              </tr>   
-        ";
-            }
-
-            echo "</table>";
-        } else {
-            echo "Nenhum registro encontrado.";
-        }
-
-        $mysqli->close();
+                $mysqli->close();
 
 
-        ?>
+                ?>
+            </div>
         </div>
+
     </main>
 </body>
 

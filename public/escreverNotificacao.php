@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO notificacao (assunto, descricao, estado, horario, data_notificacao, prioridade) VALUES ('$assunto','$descricao', '$estado', '$horario', '$data', '$prioridade')";
 
     if ($mysqli->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        header("location: notificacoes.php");
     } else {
         echo "Erro " . $sql . '<br>' . $mysqli->error;
     }
