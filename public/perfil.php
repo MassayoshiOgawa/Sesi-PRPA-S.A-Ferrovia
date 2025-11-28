@@ -32,8 +32,6 @@
             <div id='form'>
                 <div  class='formCadastro'>
 
-                    <label>Selecione sua foto de perfil:</label><br>
-                    <input type='file' name='foto' accept='image/*' required>
                    
 
                     <div class='inpput'>
